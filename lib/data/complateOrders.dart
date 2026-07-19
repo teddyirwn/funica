@@ -1,0 +1,48 @@
+import 'dart:ui';
+
+List<Map<String, dynamic>> completedOrders = [
+  {
+    "id": 1,
+    "name": "Modern Wingback",
+    "price": 280.00,
+    "quantity": 2,
+    "option": "Black",
+    "status": "Completed",
+    "buttonText": "Leave Review",
+    "color": const Color(0xFF000000),
+    "image": "assets/images/Furniture5.png",
+  },
+  {
+    "id": 2,
+    "name": "Wooden Chair",
+    "price": 140.00,
+    "quantity": 3,
+    "option": "Brown",
+    "status": "Completed",
+    "buttonText": "Buy Again",
+    "color": const Color(0xFF8B5E3C),
+    "image": "assets/images/Furniture6.png",
+  },
+  {
+    "id": 3,
+    "name": "Mirrored Reflector",
+    "price": 90.00,
+    "quantity": 1,
+    "option": "Black",
+    "status": "Completed",
+    "buttonText": "Buy Again",
+    "color": const Color(0xFF000000),
+    "image": "assets/images/Furniture7.png",
+  },
+  {
+    "id": 4,
+    "name": "Mini Bookshelf",
+    "price": 95.00,
+    "quantity": 1,
+    "option": "Brown",
+    "status": "Completed",
+    "buttonText": "Buy Again",
+    "color": const Color(0xFF8B5E3C),
+    "image": "assets/images/Furniture8.png",
+  },
+];
