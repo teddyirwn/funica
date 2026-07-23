@@ -80,7 +80,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             ),
             Center(
               child: Image.asset(
-                'assets/logo_funica.png',
+                'assets/images/logo_funica.png',
                 width: 190,
                 fit: BoxFit.contain,
               ),
@@ -99,7 +99,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                     );
                   },
                   child: Image.asset(
-                    'assets/ic_buffering.png',
+                    'assets/images/ic_buffering.png',
                     width: 40,
                     height: 40,
                     fit: BoxFit.contain,

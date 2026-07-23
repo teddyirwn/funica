@@ -67,7 +67,7 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
                     const CircleAvatar(
                       radius: 50,
                       backgroundColor: Color(0xFFF0F0F0),
-                      backgroundImage: AssetImage('assets/profile_pic.png'),
+                      backgroundImage: AssetImage('assets/images/pp_home.png'),
                     ),
                     Positioned(
                       bottom: 0,

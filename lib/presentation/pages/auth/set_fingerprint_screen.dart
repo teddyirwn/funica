@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:funica/presentation/pages/home_dashboard_screen.dart';
 
 class SetFingerprintScreen extends StatelessWidget {
   const SetFingerprintScreen({super.key});
@@ -65,7 +66,7 @@ class SetFingerprintScreen extends StatelessWidget {
               // 3. Ikon Sidik Jari
               Center(
                 child: Image.asset(
-                  'assets/fingerspint.png', // Pastikan gambar sidik jari ada di folder assets
+                  'assets/images/fingerspint.png', // Pastikan gambar sidik jari ada di folder assets
                   width: 180,
                   height: 180,
                   fit: BoxFit.contain,
@@ -184,7 +185,7 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
       if (mounted) {
         Navigator.of(context).pop();
         // TODO: Ganti dengan navigasi ke halaman Home Anda, contoh:
-        // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeDashboardScreen()));
       }
     });
   }
@@ -210,7 +211,7 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
             const SizedBox(height: 10),
             // Gambar Congratulations
             Image.asset(
-              'assets/congratulation.png',
+              'assets/images/congratulation.png',
               width: 140,
               height: 140,
               fit: BoxFit.contain,
@@ -250,7 +251,7 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
                 );
               },
               child: Image.asset(
-                'assets/ic_buffering.png',
+                'assets/images/ic_buffering.png',
                 width: 32,
                 height: 32,
                 fit: BoxFit.contain,

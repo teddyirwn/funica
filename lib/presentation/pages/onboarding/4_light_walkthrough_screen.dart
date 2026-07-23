@@ -19,7 +19,7 @@ class WalkthroughScreenThree extends StatelessWidget {
                 children: [
                   Positioned.fill(
                     child: Image.asset(
-                      'assets/bg_screen4.png', // Menggunakan format .png sesuai folder assets Anda
+                      'assets/images/bg_screen4.png', // Menggunakan format .png sesuai folder assets Anda
                       fit: BoxFit.cover,
                     ),
                   ),

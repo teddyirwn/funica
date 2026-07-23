@@ -19,7 +19,7 @@ class WalkthroughScreenTwo extends StatelessWidget {
                 children: [
                   Positioned.fill(
                     child: Image.asset(
-                      'assets/bg_screen3.png',
+                      'assets/images/bg_screen3.png',
                       fit: BoxFit.cover,
                     ),
                   ),

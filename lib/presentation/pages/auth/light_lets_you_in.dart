@@ -26,7 +26,7 @@ class LetsYouInScreen extends StatelessWidget {
               // 2. Ilustrasi Gambar di Atas
               Center(
                 child: Image.asset(
-                  'assets/bg_screen11.png',
+                  'assets/images/bg_screen11.png',
                   height: 200,
                   fit: BoxFit.contain,
                 ),
@@ -57,7 +57,7 @@ class LetsYouInScreen extends StatelessWidget {
               // 5. Tombol Continue with Google (Menggunakan gambar asset)
               _buildSocialButtonCustom(
                 iconWidget: Image.asset(
-                  'assets/google_logo.png',
+                  'assets/icons/Google.png',
                   height: 22,
                   width: 22,
                 ),

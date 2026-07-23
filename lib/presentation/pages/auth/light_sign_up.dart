@@ -46,7 +46,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: SizedBox(
                   height: 60,
                   child: Image.asset(
-                    'assets/bg_screen12.png',
+                    'assets/images/bg_screen12.png',
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -230,7 +230,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(width: 20),
                   _buildSocialIconButton(
-                    icon: Image.asset('assets/google_logo.png', height: 22, width: 22),
+                    icon: Image.asset('assets/icons/Google.png', height: 22, width: 22),
                     onPressed: () {},
                   ),
                   const SizedBox(width: 20),

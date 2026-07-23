@@ -21,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
               // 1. Background Gambar Lampu
               Positioned.fill(
                 child: Image.asset(
-                  'assets/bg_welcome.png',
+                  'assets/images/bg_welcome.png',
                   fit: BoxFit.cover,
                 ),
               ),

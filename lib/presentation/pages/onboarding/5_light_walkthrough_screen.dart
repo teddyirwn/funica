@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import '6_light_splash_screen.dart';
+import 'package:funica/presentation/pages/auth/light_lets_you_in.dart';
 
 class WalkthroughScreenFour extends StatelessWidget {
   const WalkthroughScreenFour({super.key});
@@ -18,7 +18,7 @@ class WalkthroughScreenFour extends StatelessWidget {
                 children: [
                   Positioned.fill(
                     child: Image.asset(
-                      'assets/bg_screen5.png',
+                      'assets/images/bg_screen5.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -128,7 +128,7 @@ class WalkthroughScreenFour extends StatelessWidget {
                           // 2. Navigasi push ke SplashScreen
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const SplashScreenTwo()),
+                            MaterialPageRoute(builder: (context) => const LetsYouInScreen()),
                           );
                         },
                         style: ElevatedButton.styleFrom(

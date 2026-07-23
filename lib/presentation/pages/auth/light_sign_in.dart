@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:funica/presentation/pages/auth/forgot_password_screen.dart';
 import 'package:funica/presentation/pages/profile/14_light_fill_profile.dart';
-import 'light_sign_up.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -47,7 +47,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: SizedBox(
                   height: 60,
                   child: Image.asset(
-                    'assets/bg_screen12.png',
+                    'assets/images/bg_screen12.png',
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -207,7 +207,12 @@ class _SignInScreenState extends State<SignInScreen> {
               // 8. Teks "Forgot the password?"
               Center(
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ForgotPasswordScreen()),
+                    );
+                  },
                   child: const Text(
                     'Forgot the password?',
                     style: TextStyle(
