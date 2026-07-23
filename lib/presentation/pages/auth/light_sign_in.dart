@@ -251,7 +251,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   const SizedBox(width: 20),
                   _buildSocialIconButton(
-                    icon: Image.asset('assets/google_logo.png', height: 22, width: 22),
+                    icon: Image.asset('assets/icons/Google.png', height: 22, width: 22),
                     onPressed: () {},
                   ),
                   const SizedBox(width: 20),

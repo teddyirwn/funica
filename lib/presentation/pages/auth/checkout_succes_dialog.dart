@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:funica/presentation/pages/home_dashboard_screen.dart';
+import 'package:funica/presentation/pages/order/order_page.dart';
+import 'package:funica/presentation/widget/e_receipt/menu_pop_up.dart';
+import 'package:funica/presentation/widget/e_receipt/receipt_popup_menu.dart';
 
 class CheckoutSuccessDialog extends StatelessWidget {
   const CheckoutSuccessDialog({super.key});
@@ -18,12 +22,9 @@ class CheckoutSuccessDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 8),
-
-            // ICON DEKORASI (KERANJANG DENGAN DOTS)
             Stack(
               alignment: Alignment.center,
               children: [
-                // Efek Dot/Lingkaran Kecil Dekoratif
                 SizedBox(
                   width: 150,
                   height: 150,
@@ -57,7 +58,6 @@ class CheckoutSuccessDialog extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Lingkaran Hitam Utama dengan Icon Cart
                 Container(
                   width: 100,
                   height: 100,
@@ -95,14 +95,16 @@ class CheckoutSuccessDialog extends StatelessWidget {
             ),
             const SizedBox(height: 28),
 
-            // TOMBOL 1: VIEW ORDER (HITAM)
+            // TOMBOL VIEW ORDER
             SizedBox(
               width: double.infinity,
               height: 52,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
-                  // TODO: Navigasi ke Halaman Orders List
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const OrderPage()),
+                    );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF1F1D2B),
@@ -129,8 +131,12 @@ class CheckoutSuccessDialog extends StatelessWidget {
               height: 52,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
-                  // TODO: Navigasi ke Halaman E-Receipt
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ReceiptPopupMenu(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFEBEBEB),
