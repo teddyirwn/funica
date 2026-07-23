@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:funica/core/constants/app_color.dart';
 import 'package:funica/presentation/pages/eWallet/transaction_history_page.dart';
 import 'package:funica/presentation/widget/appBar.dart';
+import 'package:funica/presentation/widget/bottom_navigation_bar.dart';
 import 'package:funica/presentation/widget/eWalletpage/transaction_list_widget.dart';
 import 'package:funica/presentation/widget/eWalletpage/wallet_card_widget.dart';
 
@@ -82,6 +83,7 @@ class EwalletPage extends StatelessWidget {
             ),
           ),
         ),
+        bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 3),
       ),
     );
   }

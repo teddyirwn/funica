@@ -1,11 +1,9 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:funica/presentation/pages/cart/my_cart_screen.dart';
 import 'package:funica/presentation/pages/home_action_menu/most_populer_screen.dart';
 import 'package:funica/presentation/pages/home_action_menu/notification_screen.dart';
 import 'package:funica/presentation/pages/home_action_menu/special_offers_screen.dart';
 import 'package:funica/presentation/pages/home_action_menu/wishlist_screen.dart';
-import 'package:funica/presentation/pages/order/order_page.dart';
 import 'package:funica/presentation/pages/product_detail/chair_category_screen.dart';
 import 'package:funica/presentation/pages/product_detail/cupboard_category_screen.dart';
 import 'package:funica/presentation/pages/product_detail/kitchen_category_screen.dart';
@@ -14,7 +12,7 @@ import 'package:funica/presentation/pages/product_detail/sofa_category_screen.da
 import 'package:funica/presentation/pages/product_detail/table_category_screen.dart';
 import 'package:funica/presentation/pages/product_detail/vases_category_screen.dart';
 import 'package:funica/presentation/pages/search_filter/search_page.dart';
-
+import 'package:funica/presentation/widget/bottom_navigation_bar.dart';
 
 class HomeDashboardScreen extends StatefulWidget {
   const HomeDashboardScreen({super.key});
@@ -24,7 +22,6 @@ class HomeDashboardScreen extends StatefulWidget {
 }
 
 class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
-  int _selectedBottomNavIndex = 0;
   int _selectedCategoryChipIndex = 0;
 
   final List<String> _categoryChips = [
@@ -33,7 +30,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     'Chair',
     'Table',
     'Kitchen',
-    'Lamp'
+    'Lamp',
   ];
 
   final List<Map<String, dynamic>> _categories = [
@@ -121,13 +118,21 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                   ),
                   Row(
                     children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
+                      const Icon(
+                        Icons.signal_cellular_alt,
+                        size: 18,
+                        color: Colors.black,
+                      ),
                       const SizedBox(width: 5),
                       const Icon(Icons.wifi, size: 18, color: Colors.black),
                       const SizedBox(width: 5),
                       Transform.rotate(
                         angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
+                        child: const Icon(
+                          Icons.battery_full,
+                          size: 18,
+                          color: Colors.black,
+                        ),
                       ),
                     ],
                   ),
@@ -185,20 +190,31 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                           ),
                         ),
                         IconButton(
-                          icon: const Icon(Icons.notifications_none_rounded, size: 26),
+                          icon: const Icon(
+                            Icons.notifications_none_rounded,
+                            size: 26,
+                          ),
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const NotificationScreen()),
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const NotificationScreen(),
+                              ),
                             );
                           },
                         ),
                         IconButton(
-                          icon: const Icon(Icons.favorite_border_rounded, size: 26),
+                          icon: const Icon(
+                            Icons.favorite_border_rounded,
+                            size: 26,
+                          ),
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const WishlistScreen()),
+                              MaterialPageRoute(
+                                builder: (context) => const WishlistScreen(),
+                              ),
                             );
                           },
                         ),
@@ -211,18 +227,27 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const SearchPage()),
+                          MaterialPageRoute(
+                            builder: (context) => const SearchPage(),
+                          ),
                         );
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 12,
+                        ),
                         decoration: BoxDecoration(
                           color: const Color(0xFFFAFAFA),
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: Row(
                           children: [
-                            const Icon(Icons.search_rounded, color: Colors.grey, size: 22),
+                            const Icon(
+                              Icons.search_rounded,
+                              color: Colors.grey,
+                              size: 22,
+                            ),
                             const SizedBox(width: 12),
                             Expanded(
                               child: Text(
@@ -233,7 +258,11 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                                 ),
                               ),
                             ),
-                            const Icon(Icons.tune_rounded, color: Color(0xFF1F1D2B), size: 20),
+                            const Icon(
+                              Icons.tune_rounded,
+                              color: Color(0xFF1F1D2B),
+                              size: 20,
+                            ),
                           ],
                         ),
                       ),
@@ -256,7 +285,10 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const SpecialOffersScreen()),
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const SpecialOffersScreen(),
+                              ),
                             );
                           },
                           child: const Text(
@@ -375,104 +407,113 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
 
                     // 4. CATEGORY GRID (8 ITEM)
                     GridView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: _categories.length,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 4,
-                          mainAxisSpacing: 16,
-                          crossAxisSpacing: 16,
-                          childAspectRatio: 0.8,
-                        ),
-                        itemBuilder: (context, index) {
-                          final item = _categories[index];
-                          return GestureDetector(
-                            onTap: () {
-                              if (item['name'] == 'Sofa') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const SofaCategoryScreen(),
-                                  ),
-                                );
-                              }
-                              if (item['name'] == 'Chair') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const ChairCategoryScreen(),
-                                  ),
-                                );
-                              }
-                              if (item['name'] == 'Table') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const TableCategoryScreen(),
-                                  ),
-                                );
-                              }
-                              if (item['name'] == 'Kitchen') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const KitchenCategoryScreen(),
-                                  ),
-                                );
-                              }
-                              if (item['name'] == 'Lamp') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const LampCategoryScreen(),
-                                  ),
-                                );
-                              }
-                              if (item['name'] == 'Cupboard') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const CupboardCategoryScreen(),
-                                  ),
-                                );
-                              }
-                              if (item['name'] == 'Vase') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const VaseCategoryScreen(),
-                                  ),
-                                );
-                              }
-                            },
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: 60,
-                                  height: 60,
-                                  decoration: const BoxDecoration(
-                                    color: Color(0xFFFAFAFA),
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Icon(
-                                    item['icon'] as IconData,
-                                    color: const Color(0xFF1F1D2B),
-                                    size: 26,
-                                  ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _categories.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 4,
+                            mainAxisSpacing: 16,
+                            crossAxisSpacing: 16,
+                            childAspectRatio: 0.8,
+                          ),
+                      itemBuilder: (context, index) {
+                        final item = _categories[index];
+                        return GestureDetector(
+                          onTap: () {
+                            if (item['name'] == 'Sofa') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const SofaCategoryScreen(),
                                 ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  item['name'] as String,
-                                  style: const TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF1F1D2B),
-                                  ),
+                              );
+                            }
+                            if (item['name'] == 'Chair') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ChairCategoryScreen(),
                                 ),
-                              ],
-                            ),
-                          );
-                        }),
+                              );
+                            }
+                            if (item['name'] == 'Table') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const TableCategoryScreen(),
+                                ),
+                              );
+                            }
+                            if (item['name'] == 'Kitchen') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const KitchenCategoryScreen(),
+                                ),
+                              );
+                            }
+                            if (item['name'] == 'Lamp') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const LampCategoryScreen(),
+                                ),
+                              );
+                            }
+                            if (item['name'] == 'Cupboard') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const CupboardCategoryScreen(),
+                                ),
+                              );
+                            }
+                            if (item['name'] == 'Vase') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const VaseCategoryScreen(),
+                                ),
+                              );
+                            }
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 60,
+                                height: 60,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFFAFAFA),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  item['icon'] as IconData,
+                                  color: const Color(0xFF1F1D2B),
+                                  size: 26,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                item['name'] as String,
+                                style: const TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF1F1D2B),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
                     const SizedBox(height: 24),
 
                     // 5. MOST POPULAR SECTION
@@ -491,7 +532,9 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const MostPopularScreen()),
+                              MaterialPageRoute(
+                                builder: (context) => const MostPopularScreen(),
+                              ),
                             );
                           },
                           child: const Text(
@@ -514,7 +557,8 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                         scrollDirection: Axis.horizontal,
                         itemCount: _categoryChips.length,
                         itemBuilder: (context, index) {
-                          final isSelected = index == _selectedCategoryChipIndex;
+                          final isSelected =
+                              index == _selectedCategoryChipIndex;
                           return GestureDetector(
                             onTap: () {
                               setState(() {
@@ -523,7 +567,9 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                             },
                             child: Container(
                               margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.symmetric(horizontal: 20),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                              ),
                               decoration: BoxDecoration(
                                 color: isSelected
                                     ? const Color(0xFF1F1D2B)
@@ -558,12 +604,13 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: _products.length,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 16,
-                        crossAxisSpacing: 16,
-                        childAspectRatio: 0.68,
-                      ),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 16,
+                            crossAxisSpacing: 16,
+                            childAspectRatio: 0.68,
+                          ),
                       itemBuilder: (context, index) {
                         final product = _products[index];
                         return Column(
@@ -582,13 +629,14 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                                     child: Image.asset(
                                       'assets/images/${product['image']}',
                                       fit: BoxFit.contain,
-                                      errorBuilder: (context, error, stackTrace) {
-                                        return const Icon(
-                                          Icons.image_not_supported_rounded,
-                                          color: Colors.grey,
-                                          size: 40,
-                                        );
-                                      },
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
+                                            return const Icon(
+                                              Icons.image_not_supported_rounded,
+                                              color: Colors.grey,
+                                              size: 40,
+                                            );
+                                          },
                                     ),
                                   ),
                                   Positioned(
@@ -634,8 +682,11 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                             const SizedBox(height: 6),
                             Row(
                               children: [
-                                const Icon(Icons.star_rounded,
-                                    size: 16, color: Color(0xFF1F1D2B)),
+                                const Icon(
+                                  Icons.star_rounded,
+                                  size: 16,
+                                  color: Color(0xFF1F1D2B),
+                                ),
                                 const SizedBox(width: 4),
                                 Text(
                                   product['rating'] as String,
@@ -676,74 +727,10 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
             ),
 
             // 6. BOTTOM NAVIGATION BAR
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
-                    blurRadius: 10,
-                    offset: const Offset(0, -4),
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _buildBottomNavItem(0, Icons.home_rounded, 'Home'),
-                  _buildBottomNavItem(1, Icons.shopping_bag_outlined, 'Cart'),
-                  _buildBottomNavItem(2, Icons.shopping_cart_outlined, 'Orders'),
-                  _buildBottomNavItem(3, Icons.account_balance_wallet_outlined, 'Wallet'),
-                  _buildBottomNavItem(4, Icons.person_outline_rounded, 'Profile'),
-                ],
-              ),
-            ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildBottomNavItem(int index, IconData icon, String label) {
-    final isSelected = _selectedBottomNavIndex == index;
-    return GestureDetector(
-      onTap: () {
-        if (index == 1) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const MyCartScreen()),
-          );
-        }else if (index == 2) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const OrderPage()),
-          );
-          } else {
-          setState(() {
-            _selectedBottomNavIndex = index;
-          });
-        }
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            icon,
-            color: isSelected ? const Color(0xFF1F1D2B) : Colors.grey[400],
-            size: 24,
-          ),
-          const SizedBox(height: 4),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-              color: isSelected ? const Color(0xFF1F1D2B) : Colors.grey[400],
-            ),
-          ),
-        ],
-      ),
+      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 0),
     );
   }
 }
