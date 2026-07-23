@@ -125,7 +125,7 @@ class CheckoutSuccessDialog extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            // TOMBOL 2: VIEW E-RECEIPT (ABU-ABU MUDA)
+            // TOMBOL VIEW
             SizedBox(
               width: double.infinity,
               height: 52,
