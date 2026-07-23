@@ -14,7 +14,6 @@ class _SecurityPageState extends State<SecurityPage> {
   bool _rememberMe = true;
   bool _faceId = true;
   bool _biometricId = false;
-  bool _googleAuthenticator = true;
 
   @override
   Widget build(BuildContext context) {
