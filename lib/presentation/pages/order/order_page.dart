@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:funica/presentation/widget/appBar.dart';
+import 'package:funica/presentation/widget/bottom_navigation_bar.dart';
 import 'package:funica/presentation/widget/orderListpage/ActiveOrdersTab.dart';
 
 class OrderPage extends StatelessWidget {
@@ -38,6 +39,7 @@ class OrderPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(children: [SizedBox(height: 24), Activeorderstab()]),
         ),
+        bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 2),
       ),
     );
   }

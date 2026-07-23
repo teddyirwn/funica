@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/checkout/checkout_screen.dart';
-
+import 'package:funica/presentation/widget/bottom_navigation_bar.dart';
 
 class MyCartScreen extends StatefulWidget {
   const MyCartScreen({super.key});
@@ -196,16 +196,25 @@ class _MyCartScreenState extends State<MyCartScreen> {
 
                               // QUANTITY DISPLAY DI MODAL
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 4,
+                                ),
                                 decoration: BoxDecoration(
                                   color: const Color(0xFFFAFAFA),
                                   borderRadius: BorderRadius.circular(16),
                                 ),
                                 child: Row(
                                   children: [
-                                    const Icon(Icons.remove, size: 14, color: Color(0xFF1F1D2B)),
+                                    const Icon(
+                                      Icons.remove,
+                                      size: 14,
+                                      color: Color(0xFF1F1D2B),
+                                    ),
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 10,
+                                      ),
                                       child: Text(
                                         '${item['quantity']}',
                                         style: const TextStyle(
@@ -215,7 +224,11 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                         ),
                                       ),
                                     ),
-                                    const Icon(Icons.add, size: 14, color: Color(0xFF1F1D2B)),
+                                    const Icon(
+                                      Icons.add,
+                                      size: 14,
+                                      color: Color(0xFF1F1D2B),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -322,13 +335,21 @@ class _MyCartScreenState extends State<MyCartScreen> {
                   ),
                   Row(
                     children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
+                      const Icon(
+                        Icons.signal_cellular_alt,
+                        size: 18,
+                        color: Colors.black,
+                      ),
                       const SizedBox(width: 5),
                       const Icon(Icons.wifi, size: 18, color: Colors.black),
                       const SizedBox(width: 5),
                       Transform.rotate(
                         angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
+                        child: const Icon(
+                          Icons.battery_full,
+                          size: 18,
+                          color: Colors.black,
+                        ),
                       ),
                     ],
                   ),
@@ -369,7 +390,11 @@ class _MyCartScreenState extends State<MyCartScreen> {
                     ],
                   ),
                   IconButton(
-                    icon: const Icon(Icons.search_rounded, color: Color(0xFF1F1D2B), size: 24),
+                    icon: const Icon(
+                      Icons.search_rounded,
+                      color: Color(0xFF1F1D2B),
+                      size: 24,
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -433,7 +458,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                             children: [
                               // NAMA & TOMBOL DELETE
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Expanded(
                                     child: Text(
@@ -488,7 +514,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
 
                               // HARGA & QUANTITY SELECTOR
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     '\$${(item['price'] as double).toStringAsFixed(2)}',
@@ -501,7 +528,10 @@ class _MyCartScreenState extends State<MyCartScreen> {
 
                                   // QUANTITY SELECTOR
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 10,
+                                      vertical: 4,
+                                    ),
                                     decoration: BoxDecoration(
                                       color: const Color(0xFFFAFAFA),
                                       borderRadius: BorderRadius.circular(16),
@@ -512,14 +542,22 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                           onTap: () {
                                             if ((item['quantity'] as int) > 1) {
                                               setState(() {
-                                                item['quantity'] = (item['quantity'] as int) - 1;
+                                                item['quantity'] =
+                                                    (item['quantity'] as int) -
+                                                    1;
                                               });
                                             }
                                           },
-                                          child: const Icon(Icons.remove, size: 16, color: Color(0xFF1F1D2B)),
+                                          child: const Icon(
+                                            Icons.remove,
+                                            size: 16,
+                                            color: Color(0xFF1F1D2B),
+                                          ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 12,
+                                          ),
                                           child: Text(
                                             '${item['quantity']}',
                                             style: const TextStyle(
@@ -532,10 +570,15 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                         GestureDetector(
                                           onTap: () {
                                             setState(() {
-                                              item['quantity'] = (item['quantity'] as int) + 1;
+                                              item['quantity'] =
+                                                  (item['quantity'] as int) + 1;
                                             });
                                           },
-                                          child: const Icon(Icons.add, size: 16, color: Color(0xFF1F1D2B)),
+                                          child: const Icon(
+                                            Icons.add,
+                                            size: 16,
+                                            color: Color(0xFF1F1D2B),
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -577,10 +620,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                     children: [
                       Text(
                         'Total price',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey[600],
-                        ),
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                       ),
                       const SizedBox(height: 4),
                       Text(
@@ -626,7 +666,11 @@ class _MyCartScreenState extends State<MyCartScreen> {
                               ),
                             ),
                             SizedBox(width: 8),
-                            Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 18),
+                            Icon(
+                              Icons.arrow_forward_rounded,
+                              color: Colors.white,
+                              size: 18,
+                            ),
                           ],
                         ),
                       ),
@@ -637,62 +681,10 @@ class _MyCartScreenState extends State<MyCartScreen> {
             ),
 
             // BOTTOM NAVIGATION BAR
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                border: Border(
-                  top: BorderSide(color: Color(0xFFEEEEEE), width: 0.8),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _buildBottomNavItem(0, Icons.home_outlined, 'Home'),
-                  _buildBottomNavItem(1, Icons.shopping_bag_rounded, 'Cart'),
-                  _buildBottomNavItem(2, Icons.shopping_cart_outlined, 'Orders'),
-                  _buildBottomNavItem(3, Icons.account_balance_wallet_outlined, 'Wallet'),
-                  _buildBottomNavItem(4, Icons.person_outline_rounded, 'Profile'),
-                ],
-              ),
-            ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildBottomNavItem(int index, IconData icon, String label) {
-    final isSelected = _selectedBottomNavIndex == index;
-    return GestureDetector(
-      onTap: () {
-        if (index == 0) {
-          Navigator.pop(context); // Kembali ke Home
-        } else {
-          setState(() {
-            _selectedBottomNavIndex = index;
-          });
-        }
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            icon,
-            color: isSelected ? const Color(0xFF1F1D2B) : Colors.grey[400],
-            size: 24,
-          ),
-          const SizedBox(height: 4),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-              color: isSelected ? const Color(0xFF1F1D2B) : Colors.grey[400],
-            ),
-          ),
-        ],
-      ),
+    bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 1),
     );
   }
 }

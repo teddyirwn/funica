@@ -10,6 +10,7 @@ import 'package:funica/presentation/pages/profile/payment_page.dart';
 import 'package:funica/presentation/pages/profile/privacy_policy_page.dart';
 import 'package:funica/presentation/pages/profile/security_page.dart';
 import 'package:funica/presentation/widget/appBar.dart';
+import 'package:funica/presentation/widget/bottom_navigation_bar.dart';
 import 'package:funica/presentation/widget/profilePage/logout_bottom_sheet.dart';
 import 'package:funica/presentation/widget/profilePage/profile_header_widged.dart';
 import 'package:funica/presentation/widget/profilePage/profile_menu_tile.dart';
@@ -207,6 +208,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 4),
     );
   }
 
