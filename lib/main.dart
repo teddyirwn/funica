@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:funica/presentation/pages/auth/forgot_password_screen.dart';
 import 'package:funica/presentation/pages/order_page.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
-      home: const OrderPage(),
+      home: const ForgotPasswordScreen(),
     );
   }
 }
