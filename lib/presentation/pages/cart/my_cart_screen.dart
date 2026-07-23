@@ -320,42 +320,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.signal_cellular_alt,
-                        size: 18,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(
-                          Icons.battery_full,
-                          size: 18,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // APP BAR (LOGO / MENU ICON, TITLE, SEARCH ICON)
             Padding(
@@ -684,7 +648,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
           ],
         ),
       ),
-    bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 1),
+      bottomNavigationBar: const CustomBottomNavigationBar(selectedIndex: 1),
     );
   }
 }

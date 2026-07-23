@@ -102,44 +102,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.signal_cellular_alt,
-                        size: 18,
-                        color: Colors.black,
-                      ),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(
-                          Icons.battery_full,
-                          size: 18,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
             // ISI KONTEN SCROLLABLE
             Expanded(
               child: SingleChildScrollView(
