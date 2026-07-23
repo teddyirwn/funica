@@ -17,7 +17,7 @@ class OrderListItem extends StatelessWidget {
           quantity: listOrderItem[index]['quantity'],
           status: listOrderItem[index]['status'],
           price: (listOrderItem[index]['price'] as num).toDouble(),
-          buttonTxt: listOrderItem[index]['buttonText'],
+          buttonText: listOrderItem[index]['buttonText'],
         );
       },
     );

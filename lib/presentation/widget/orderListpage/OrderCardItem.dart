@@ -10,7 +10,7 @@ class OrderCardItem extends StatelessWidget {
   final double price;
   final bool isTracking;
   final String status;
-  final String buttonTxt;
+  final String buttonText;
 
   const OrderCardItem({
     super.key,
@@ -21,12 +21,12 @@ class OrderCardItem extends StatelessWidget {
     required this.price,
     this.isTracking = false,
     required this.status,
-    required this.buttonTxt,
+    required this.buttonText,
   });
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('OrderCardItem: Button text = $buttonTxt');
+    debugPrint('OrderCardItem: Button text = $buttonText');
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8),
       padding: EdgeInsets.all(16),
@@ -112,7 +112,8 @@ class OrderCardItem extends StatelessWidget {
                               'productColor': productColor,
                               'quantity': quantity,
                               'price': price,
-                              'buttonTxt': buttonTxt ?? 'Track Order',
+                              'status': status,
+                              'buttonText': buttonText,
                             },
                           ),
                   ],

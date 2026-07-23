@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:funica/core/constants/app_color.dart';
+
 import 'package:funica/presentation/widget/orderListpage/OrderCardItem.dart';
 import 'package:funica/presentation/widget/orderTrackingPage/AppbarOrderTracking.dart';
 import 'package:funica/presentation/widget/orderTrackingPage/DashedLine.dart';
@@ -36,7 +35,7 @@ class OrderTrackingPage extends StatelessWidget {
                         productColor: order['productColor'] ?? '',
                         quantity: order['quantity'] ?? 0,
                         price: order['price'] ?? 0,
-                        buttonTxt: order['buttonTxt'] ?? 'Track Order',
+                        buttonText: order['buttonText'] ?? 'Track Order',
                       ),
 
                       // delivery status

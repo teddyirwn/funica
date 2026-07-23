@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:funica/presentation/widget/appBar.dart';
 import 'package:funica/presentation/widget/orderListpage/ActiveOrdersTab.dart';
 
 class OrderPage extends StatelessWidget {
@@ -9,60 +10,33 @@ class OrderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/icons/LogoLight.svg',
-                          width: 24,
-                          height: 24,
-                        ),
-                      ),
-                      Text(
-                        "My Orders",
-                        style: TextStyle(
-                          fontFamily: 'urbanist',
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/icons/Search.svg',
-                          width: 24,
-                          height: 24,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          'assets/icons/Group.svg',
-                          width: 24,
-                          height: 24,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+        appBar: AppBarWidget(
+          title: "My Orders",
+          action: [
+            IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                'assets/icons/Search.svg',
+                width: 24,
+                height: 24,
               ),
-              SizedBox(height: 24),
-              Activeorderstab(),
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 18),
+              child: IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset(
+                  'assets/icons/Group.svg',
+                  width: 24,
+                  height: 24,
+                ),
+              ),
+            ),
+          ],
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(children: [SizedBox(height: 24), Activeorderstab()]),
         ),
       ),
     );
