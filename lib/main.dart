@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:funica/presentation/pages/auth/forgot_password_screen.dart';
 import 'package:funica/presentation/pages/onboarding/1_light_splash_screen.dart';
-import 'package:funica/presentation/pages/order/order_page.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/cart/my_cart_screen.dart';
 import 'package:funica/presentation/pages/product_detail/view_reviews_screen.dart';

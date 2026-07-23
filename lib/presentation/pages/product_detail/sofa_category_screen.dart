@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/product_detail/sofa_details_screen.dart';
 

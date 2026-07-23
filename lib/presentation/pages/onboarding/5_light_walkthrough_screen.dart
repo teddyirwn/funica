@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/auth/light_lets_you_in.dart';
 

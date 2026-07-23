@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/eWallet/e_receipt_page.dart';
-import 'package:funica/presentation/pages/home_dashboard_screen.dart';
 import 'package:funica/presentation/pages/order/order_page.dart';
-import 'package:funica/presentation/widget/e_receipt/menu_pop_up.dart';
-import 'package:funica/presentation/widget/e_receipt/receipt_popup_menu.dart';
 
 class CheckoutSuccessDialog extends StatelessWidget {
   const CheckoutSuccessDialog({super.key});

@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/search_filter/search_not_found_screen.dart';
 import 'package:funica/presentation/pages/search_filter/search_result_list_screen.dart';

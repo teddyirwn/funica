@@ -1,10 +1,7 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:funica/presentation/pages/checkout/checkout_screen.dart';
 import 'package:funica/presentation/widget/appBar.dart';
 import 'package:funica/presentation/widget/bottom_navigation_bar.dart';
-import 'package:funica/presentation/widget/customAppbarWidget.dart';
 
 class MyCartScreen extends StatefulWidget {
   const MyCartScreen({super.key});
@@ -14,7 +11,6 @@ class MyCartScreen extends StatefulWidget {
 }
 
 class _MyCartScreenState extends State<MyCartScreen> {
-  int _selectedBottomNavIndex = 1; // Tab Cart Aktif
 
   // DATA DUMMY CART ITEM SESUAI DESAIN UI
   final List<Map<String, dynamic>> _cartItems = [
