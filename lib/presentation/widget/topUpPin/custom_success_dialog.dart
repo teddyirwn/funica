@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:funica/presentation/pages/eWallet/eWallet_page.dart';
 import 'package:funica/presentation/widget/customPrimaryButton.dart';
 import 'package:funica/presentation/widget/customSecondaryButton.dart';
 
@@ -41,12 +42,20 @@ class CustomSuccessDialog extends StatelessWidget {
               Spacer(),
               Customprimarybutton(
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (_) => EwalletPage()),
+                  );
                 },
                 text: "Continue",
               ),
               SizedBox(height: 16),
-              Customsecondarybutton(text: "Cancel"),
+              Customsecondarybutton(
+                text: "Cancel",
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
             ],
           ),
         ),
