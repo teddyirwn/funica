@@ -1,7 +1,10 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:funica/presentation/pages/checkout/checkout_screen.dart';
+import 'package:funica/presentation/widget/appBar.dart';
 import 'package:funica/presentation/widget/bottom_navigation_bar.dart';
+import 'package:funica/presentation/widget/customAppbarWidget.dart';
 
 class MyCartScreen extends StatefulWidget {
   const MyCartScreen({super.key});
@@ -316,55 +319,24 @@ class _MyCartScreenState extends State<MyCartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBarWidget(
+        title: 'My Cart',
+        action: [
+          IconButton(
+            icon: const Icon(
+              Icons.search_rounded,
+              color: Color(0xFF1F1D2B),
+              size: 24,
+            ),
+            onPressed: () {},
+          ),
+          const SizedBox(width: 10),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           children: [
             // STATUS BAR MANUAL
-
-            // APP BAR (LOGO / MENU ICON, TITLE, SEARCH ICON)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      // LOGO FUNICA APP
-                      Image.asset(
-                        'assets/images/logo_funica.png',
-                        width: 28,
-                        height: 28,
-                        errorBuilder: (context, error, stackTrace) {
-                          return const Icon(
-                            Icons.short_text_rounded,
-                            size: 32,
-                            color: Color(0xFF1F1D2B),
-                          );
-                        },
-                      ),
-                      const SizedBox(width: 12),
-                      const Text(
-                        'My Cart',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF1F1D2B),
-                        ),
-                      ),
-                    ],
-                  ),
-                  IconButton(
-                    icon: const Icon(
-                      Icons.search_rounded,
-                      color: Color(0xFF1F1D2B),
-                      size: 24,
-                    ),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 12),
 
             // LIST CART ITEMS SCROLLABLE
             Expanded(
