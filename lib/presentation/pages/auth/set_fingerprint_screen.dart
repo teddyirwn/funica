@@ -174,17 +174,15 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
   @override
   void initState() {
     super.initState();
-    // Mengatur kecepatan putar (durasi 1 detik untuk satu putaran penuh)
+
     _controller = AnimationController(
       duration: const Duration(seconds: 1),
       vsync: this,
-    )..repeat(); // Mengulang animasi terus-menerus
+    )..repeat();
 
-    // Timer otomatis menutup dialog dan pindah halaman setelah 3 detik
     Future.delayed(const Duration(seconds: 3), () {
       if (mounted) {
         Navigator.of(context).pop();
-        // TODO: Ganti dengan navigasi ke halaman Home Anda, contoh:
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeDashboardScreen()));
       }
     });
@@ -192,7 +190,7 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
 
   @override
   void dispose() {
-    _controller.dispose(); // Membersihkan controller saat dialog ditutup
+    _controller.dispose();
     super.dispose();
   }
 
@@ -209,7 +207,6 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 10),
-            // Gambar Congratulations
             Image.asset(
               'assets/images/congratulation.png',
               width: 140,
@@ -217,8 +214,6 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
               fit: BoxFit.contain,
             ),
             const SizedBox(height: 24),
-
-            // Judul
             const Text(
               "Congratulations!",
               style: TextStyle(
@@ -228,8 +223,6 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
               ),
             ),
             const SizedBox(height: 12),
-
-            // Deskripsi
             const Text(
               "Your account is ready to use. You will be redirected to the Home page in a few seconds..",
               textAlign: TextAlign.center,
@@ -240,8 +233,6 @@ class _CongratulationsDialogContentState extends State<_CongratulationsDialogCon
               ),
             ),
             const SizedBox(height: 30),
-
-            // Ikon Buffering yang Berputar Otomatis
             AnimatedBuilder(
               animation: _controller,
               builder: (context, child) {

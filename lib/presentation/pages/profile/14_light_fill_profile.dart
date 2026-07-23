@@ -38,7 +38,6 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Tombol Kembali (Back) & Judul
               Row(
                 children: [
                   IconButton(
@@ -60,7 +59,6 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
               ),
               const SizedBox(height: 24),
 
-              // 2. Avatar / Foto Profil Menggunakan Aset Lokal
               Center(
                 child: Stack(
                   children: [
@@ -91,22 +89,18 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-
-              // 3. Input Full Name
               _buildTextField(
                 controller: _fullNameController,
                 hintText: 'Full Name',
               ),
               const SizedBox(height: 16),
 
-              // 4. Input Nickname
               _buildTextField(
                 controller: _nicknameController,
                 hintText: 'Nickname',
               ),
               const SizedBox(height: 16),
 
-              // 5. Input Date of Birth
               _buildTextField(
                 controller: _dobController,
                 hintText: 'Date of Birth',
@@ -114,7 +108,6 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
               ),
               const SizedBox(height: 16),
 
-              // 6. Input Email
               _buildTextField(
                 controller: _emailController,
                 hintText: 'Email',
@@ -122,7 +115,6 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
               ),
               const SizedBox(height: 16),
 
-              // 7. Input Phone Number dengan Dropdown Negara
               Container(
                 height: 56,
                 decoration: BoxDecoration(
@@ -153,7 +145,6 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
               ),
               const SizedBox(height: 16),
 
-              // 8. Dropdown Gender
               Container(
                 height: 56,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -187,7 +178,6 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
               ),
               const SizedBox(height: 30),
 
-              // 9. Tombol Continue (Navigasi Langsung ke Screen PIN)
               SizedBox(
                 width: double.infinity,
                 height: 52,

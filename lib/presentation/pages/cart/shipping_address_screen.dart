@@ -40,9 +40,6 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -67,8 +64,6 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // ADDRESS LIST
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -182,8 +177,6 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
                 },
               ),
             ),
-
-            // ADD NEW ADDRESS BUTTON & APPLY
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               child: Column(
@@ -193,7 +186,6 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () {
-                        // TODO: Tambah alamat baru
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFEBEBEB),

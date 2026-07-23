@@ -10,7 +10,7 @@ class EnterPinScreen extends StatefulWidget {
 
 class _EnterPinScreenState extends State<EnterPinScreen> {
   String _pin =
-      "9999"; // Simulasi PIN terisi default sesuai UI gambar (4 digit)
+      "9999";
 
   void _onKeyTap(String value) {
     if (_pin.length < 4) {
@@ -35,9 +35,6 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK BUTTON, TITLE)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -71,8 +68,6 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                     style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                   const SizedBox(height: 40),
-
-                  // 4 INPUT PIN BOXES
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(4, (index) {
@@ -122,8 +117,6 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                     }),
                   ),
                   const SizedBox(height: 40),
-
-                  // CONTINUE BUTTON
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: SizedBox(
@@ -135,7 +128,7 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                                 showDialog(
                                   context: context,
                                   barrierDismissible:
-                                      false, // Mencegah popup tertutup jika diklik diluar
+                                      false,
                                   builder: (BuildContext context) {
                                     return const CheckoutSuccessDialog();
                                   },
@@ -166,8 +159,6 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                 ],
               ),
             ),
-
-            // NUMERIC KEYPAD
             Container(
               padding: const EdgeInsets.only(top: 20, bottom: 12),
               decoration: const BoxDecoration(

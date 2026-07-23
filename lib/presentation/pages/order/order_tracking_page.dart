@@ -37,8 +37,6 @@ class OrderTrackingPage extends StatelessWidget {
                         price: order['price'] ?? 0,
                         buttonText: order['buttonText'] ?? 'Track Order',
                       ),
-
-                      // delivery status
                       SizedBox(height: 24),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 24.0),

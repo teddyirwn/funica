@@ -8,7 +8,7 @@ class AddPromoScreen extends StatefulWidget {
 }
 
 class _AddPromoScreenState extends State<AddPromoScreen> {
-  int _selectedPromoIndex = 1; // Default discount 30% selected
+  int _selectedPromoIndex = 1;
 
   final List<Map<String, dynamic>> _promoList = [
     {
@@ -45,9 +45,6 @@ class _AddPromoScreenState extends State<AddPromoScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK BUTTON, TITLE, SEARCH)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -81,8 +78,6 @@ class _AddPromoScreenState extends State<AddPromoScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // PROMO LIST
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -167,8 +162,6 @@ class _AddPromoScreenState extends State<AddPromoScreen> {
                 },
               ),
             ),
-
-            // APPLY BUTTON
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               child: SizedBox(

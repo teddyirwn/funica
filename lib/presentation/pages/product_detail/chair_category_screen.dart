@@ -9,7 +9,6 @@ class ChairCategoryScreen extends StatefulWidget {
 }
 
 class _ChairCategoryScreenState extends State<ChairCategoryScreen> {
-  // 1. MENGGANTI 'icon' MENJADI NAMA FILE GAMBAR ('image')
   final List<Map<String, dynamic>> _chairProducts = [
     {
       'name': 'Modern Wingback',
@@ -68,9 +67,6 @@ class _ChairCategoryScreenState extends State<ChairCategoryScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK, TITLE, SEARCH)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -104,8 +100,6 @@ class _ChairCategoryScreenState extends State<ChairCategoryScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // PRODUCT GRID (2 KOLOM)
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -128,7 +122,7 @@ class _ChairCategoryScreenState extends State<ChairCategoryScreen> {
                             productName: item['name'] as String,
                             productImage:
                                 item['image']
-                                    as String, // 👈 KIRIM NAMA GAMBAR DI SINI
+                                    as String,
                             initialPrice: double.parse(
                               (item['price'] as String).replaceAll('\$', ''),
                             ),
@@ -148,7 +142,6 @@ class _ChairCategoryScreenState extends State<ChairCategoryScreen> {
                           ),
                           child: Stack(
                             children: [
-                              // 2. MENGGANTI ICON DENGAN IMAGE.ASSET
                               Center(
                                 child: Image.asset(
                                   'assets/images/${item['image']}',

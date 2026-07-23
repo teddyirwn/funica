@@ -11,7 +11,6 @@ class WalkthroughScreenTwo extends StatelessWidget {
       body: SizedBox.expand(
         child: Column(
           children: [
-            // Bagian Atas: Gambar Latar Belakang
             Expanded(
               flex: 5,
               child: Stack(
@@ -25,8 +24,6 @@ class WalkthroughScreenTwo extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Bagian Bawah: Kontainer Teks & Indikator Tepat di Bawah Teks
             Expanded(
               flex: 4,
               child: Padding(
@@ -35,7 +32,6 @@ class WalkthroughScreenTwo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Grup Teks dan Indikator agar menempel berdekatan
                     Column(
                       children: [
                         const Text(
@@ -50,8 +46,7 @@ class WalkthroughScreenTwo extends StatelessWidget {
                         ),
                         const SizedBox(
                           height: 24,
-                        ), // Jarak antara teks dan indikator
-                        // Indikator Dots tepat di bawah teks (Aktif di Kiri)
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -85,8 +80,6 @@ class WalkthroughScreenTwo extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    // Tombol Next di paling bawah
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(

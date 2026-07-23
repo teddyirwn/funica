@@ -6,7 +6,6 @@ class SpecialOffersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 1. MENGGANTI 'icon' MENJADI NAMA FILE GAMBAR ('image')
     final List<Map<String, dynamic>> offers = [
       {
         'discount': '25%',
@@ -39,9 +38,6 @@ class SpecialOffersScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK, TITLE, MORE)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -74,8 +70,6 @@ class SpecialOffersScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-            // LIST CARDS SPECIAL OFFERS
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(
@@ -132,7 +126,6 @@ class SpecialOffersScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            // 2. MENGGANTI ICON DENGAN IMAGE.ASSET
                             Image.asset(
                               'assets/images/${item['image']}',
                               height: 120,
@@ -147,8 +140,6 @@ class SpecialOffersScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-
-                        // DOT SLIDER INDICATOR
                         Positioned(
                           bottom: 0,
                           left: 0,

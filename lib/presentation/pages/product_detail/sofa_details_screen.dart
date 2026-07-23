@@ -41,16 +41,12 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // ISI CONTENT (SCROLLABLE)
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // BANNER GAMBAR PRODUK
                     Container(
                       height: 280,
                       width: double.infinity,
@@ -68,8 +64,6 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                               onPressed: () => Navigator.pop(context),
                             ),
                           ),
-
-                          // AREA TAMPILAN GAMBAR DINAMIS
                           Center(
                             child: Padding(
                               padding: const EdgeInsets.all(20.0),
@@ -86,8 +80,6 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                               ),
                             ),
                           ),
-
-                          // INDIKATOR PAGE SLIDER
                           Positioned(
                             bottom: 16,
                             left: 0,
@@ -118,14 +110,11 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-
-                    // INFORMASI PRODUK
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // JUDUL & WISHLIST ICON
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -156,8 +145,6 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                             ],
                           ),
                           const SizedBox(height: 8),
-
-                          // BADGE SOLD & RATING
                           Row(
                             children: [
                               Container(
@@ -221,8 +208,6 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                           const SizedBox(height: 20),
                           const Divider(color: Color(0xFFEEEEEE), thickness: 1),
                           const SizedBox(height: 16),
-
-                          // DESKRIPSI
                           const Text(
                             'Description',
                             style: TextStyle(
@@ -255,8 +240,6 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                             ),
                           ),
                           const SizedBox(height: 20),
-
-                          // OPSI WARNA
                           const Text(
                             'Color',
                             style: TextStyle(
@@ -297,8 +280,6 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                             }),
                           ),
                           const SizedBox(height: 24),
-
-                          // QUANTITY SELECTOR
                           Row(
                             children: [
                               const Text(
@@ -369,8 +350,6 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                 ),
               ),
             ),
-
-            // BOTTOM BAR (TOTAL PRICE & ADD TO CART)
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               decoration: BoxDecoration(
@@ -414,7 +393,6 @@ class _SofaDetailsScreenState extends State<SofaDetailsScreen> {
                       height: 54,
                       child: ElevatedButton.icon(
                         onPressed: () {
-                          // Navigasi ke halaman My Cart setelah produk ditambahkan
                           Navigator.push(
                             context,
                             MaterialPageRoute(

@@ -22,7 +22,6 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
       _showSuccessDialog = true;
     });
 
-    // Setelah 3 detik, otomatis pindah ke Home Screen
     Timer(const Duration(seconds: 3), () {
       if (mounted) {
         Navigator.pushAndRemoveUntil(
@@ -41,9 +40,6 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
       body: SizedBox.expand(
         child: Stack(
           children: [
-            // =========================================================
-            // 1. TAMPILAN UTAMA SCREEN
-            // =========================================================
             Positioned(
               top: 50,
               left: 12,
@@ -240,9 +236,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
               ),
             ),
 
-            // =========================================================
-            // 2. OVERLAY LAYER & CARD CONGRATULATIONS (SCREEN 27)
-            // =========================================================
+            // 2. OVERLAY LAYER & CARD
             if (_showSuccessDialog) ...[
               Positioned.fill(
                 child: Container(
@@ -443,7 +437,6 @@ class _DottedSpinnerPainter extends CustomPainter {
 
     for (int i = 0; i < dotCount; i++) {
       final double angle = (i * 2 * math.pi) / dotCount;
-      // Ukuran titik mengecil perlahan memutar untuk efek trail/ekor animasi
       final double dotRadius = (size.width * 0.08) * ((i + 1) / dotCount) + 1.5;
 
       final double x = center + (radius - 6) * math.cos(angle);

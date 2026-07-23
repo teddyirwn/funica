@@ -9,7 +9,6 @@ class CupboardCategoryScreen extends StatefulWidget {
 }
 
 class _CupboardCategoryScreenState extends State<CupboardCategoryScreen> {
-  // LIST PRODUK CUPBOARD DENGAN PATH GAMBAR DINAMIS
   final List<Map<String, dynamic>> _cupboardProducts = [
     {
       'name': 'Mini Bookshelf',
@@ -68,9 +67,6 @@ class _CupboardCategoryScreenState extends State<CupboardCategoryScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK, TITLE, SEARCH)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -104,8 +100,6 @@ class _CupboardCategoryScreenState extends State<CupboardCategoryScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // PRODUCT GRID (2 KOLOM)
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -128,7 +122,7 @@ class _CupboardCategoryScreenState extends State<CupboardCategoryScreen> {
                             productName: item['name'] as String,
                             productImage:
                                 item['image']
-                                    as String, // 👈 MENGIRIM NAMA GAMBAR KE DETAILS SCREEN
+                                    as String, 
                             initialPrice: double.parse(
                               (item['price'] as String).replaceAll('\$', ''),
                             ),
@@ -148,7 +142,6 @@ class _CupboardCategoryScreenState extends State<CupboardCategoryScreen> {
                           ),
                           child: Stack(
                             children: [
-                              // TAMPILAN GAMBAR PRODUK
                               Center(
                                 child: Image.asset(
                                   'assets/images/${item['image']}',

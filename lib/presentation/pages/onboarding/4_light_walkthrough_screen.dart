@@ -11,22 +11,18 @@ class WalkthroughScreenThree extends StatelessWidget {
       body: SizedBox.expand(
         child: Column(
           children: [
-            // Bagian Atas: Gambar Latar Belakang & Status Bar
             Expanded(
               flex: 5,
               child: Stack(
                 children: [
                   Positioned.fill(
                     child: Image.asset(
-                      'assets/images/bg_screen4.png', // Menggunakan format .png sesuai folder assets Anda
-                      fit: BoxFit.cover,
+                      'assets/images/bg_screen4.png', 
                     ),
                   ),
                 ],
               ),
             ),
-
-            // Bagian Bawah: Kontainer Teks & Indikator Rapat di Tengah
             Expanded(
               flex: 4,
               child: Padding(
@@ -35,7 +31,6 @@ class WalkthroughScreenThree extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Grup Teks dan Indikator agar menempel berdekatan di tengah
                     Column(
                       children: [
                         const Text(
@@ -50,8 +45,7 @@ class WalkthroughScreenThree extends StatelessWidget {
                         ),
                         const SizedBox(
                           height: 24,
-                        ), // Jarak rapat antara teks dan indikator
-                        // Indikator Dots rata tengah (Garis aktif berada di Tengah)
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -85,8 +79,6 @@ class WalkthroughScreenThree extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    // Tombol Next di paling bawah untuk menuju Screen 5
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(

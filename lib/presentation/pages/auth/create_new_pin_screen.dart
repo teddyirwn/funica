@@ -32,7 +32,7 @@ class _CreateNewPinScreenState extends State<CreateNewPinScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // 1. Tombol Kembali & Judul
+            // Judul
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               child: Row(
@@ -57,7 +57,7 @@ class _CreateNewPinScreenState extends State<CreateNewPinScreen> {
             ),
             const SizedBox(height: 20),
 
-            // 2. Deskripsi
+            // Deskripsi
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Text(
@@ -72,7 +72,7 @@ class _CreateNewPinScreenState extends State<CreateNewPinScreen> {
             ),
             const SizedBox(height: 40),
 
-            // 3. Kotak Input PIN (4 Kotak dengan Titik Hitam & Angka Aktif)
+            // Kotak Input PIN
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Row(
@@ -95,7 +95,6 @@ class _CreateNewPinScreenState extends State<CreateNewPinScreen> {
                     alignment: Alignment.center,
                     child: hasDigit
                         ? (isLatestDigit
-                    // Tampilkan angka asli pada digit yang paling terakhir diketik
                         ? Text(
                       _pin[index],
                       style: const TextStyle(
@@ -104,7 +103,6 @@ class _CreateNewPinScreenState extends State<CreateNewPinScreen> {
                         color: Color(0xFF1F1D2B),
                       ),
                     )
-                    // Ubah jadi titik hitam pada digit sebelumnya
                         : Container(
                       width: 12,
                       height: 12,
@@ -120,7 +118,7 @@ class _CreateNewPinScreenState extends State<CreateNewPinScreen> {
             ),
             const Spacer(),
 
-            // 4. Tombol Continue (Navigasi ke Set Fingerprint Screen)
+            // Tombol Continue
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: SizedBox(
@@ -158,7 +156,7 @@ class _CreateNewPinScreenState extends State<CreateNewPinScreen> {
             ),
             const SizedBox(height: 24),
 
-            // 5. Keypad Angka Kustom
+            // Keypad Angka
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12),
               child: Column(

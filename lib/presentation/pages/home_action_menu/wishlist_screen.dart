@@ -19,7 +19,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
     'Lamp',
   ];
 
-  // 1. MENGGANTI 'icon' MENJADI NAMA FILE GAMBAR ('image')
   final List<Map<String, dynamic>> _wishlistItems = [
     {
       'name': 'Shiny Wooden Chair',
@@ -72,9 +71,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (Back, Title, Search Icon)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -109,8 +105,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
                 ],
               ),
             ),
-
-            // HORIZONTAL CATEGORIES
             const SizedBox(height: 8),
             SizedBox(
               height: 38,
@@ -157,8 +151,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
               ),
             ),
             const SizedBox(height: 20),
-
-            // PRODUCT GRID (2 KOLOM) - MENGGUNAKAN GAMBAR DINAMIS
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -184,7 +176,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         ),
                         child: Stack(
                           children: [
-                            // 2. TAMPILAN GAMBAR PRODUK WISHLIST DINAMIS
                             Center(
                               child: Image.asset(
                                 'assets/images/${item['image']}',

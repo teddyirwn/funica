@@ -32,7 +32,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Tombol Kembali (Back)
               IconButton(
                 onPressed: () => Navigator.pop(context),
                 icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -40,8 +39,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 constraints: const BoxConstraints(),
               ),
               const SizedBox(height: 10),
-
-              // 2. Logo Aplikasi di Tengah
               Center(
                 child: SizedBox(
                   height: 60,
@@ -52,8 +49,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // 3. Judul "Create Your Account"
               const Center(
                 child: Text(
                   "Create Your Account",
@@ -66,7 +61,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               const SizedBox(height: 30),
 
-              // 4. Input Email
               TextField(
                 controller: _emailController,
                 style: const TextStyle(
@@ -96,8 +90,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-
-              // 5. Input Password
               TextField(
                 controller: _passwordController,
                 obscureText: _obscurePassword,
@@ -139,8 +131,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               const SizedBox(height: 12),
-
-              // 6. Checkbox "Remember me"
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -172,17 +162,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ],
               ),
               const SizedBox(height: 24),
-
-              // 7. Tombol Sign Up (Sudah ditambahkan Navigasi ke Screen Berikutnya)
               SizedBox(
                 width: double.infinity,
                 height: 52,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigasi ke screen berikutnya saat tombol Sign up ditekan
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignInScreen()), // Ganti dengan screen tujuan Anda
+                      MaterialPageRoute(builder: (context) => const SignInScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -203,8 +190,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-
-              // 8. Garis Pembatas "or continue with"
               Row(
                 children: const [
                   Expanded(child: Divider(color: Color(0xFFE0E0E0), thickness: 1)),
@@ -219,8 +204,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ],
               ),
               const SizedBox(height: 24),
-
-              // 9. Tombol Media Sosial
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -241,8 +224,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ],
               ),
               const SizedBox(height: 30),
-
-              // 10. Teks Bawah: Already have an account? Sign in
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

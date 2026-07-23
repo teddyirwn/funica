@@ -18,8 +18,6 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
     'Kitchen',
     'Lamp',
   ];
-
-  // 1. MENGGANTI 'icon' MENJADI NAMA FILE GAMBAR ('image')
   final List<Map<String, dynamic>> _popularProducts = [
     {
       'name': 'Foam Padded Chair',
@@ -78,9 +76,6 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK, TITLE, SEARCH)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -114,8 +109,6 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // CATEGORY CHIPS
             SizedBox(
               height: 38,
               child: ListView.builder(
@@ -161,8 +154,6 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
               ),
             ),
             const SizedBox(height: 20),
-
-            // PRODUCT GRID (2 KOLOM) - MENGGUNAKAN GAMBAR DINAMIS
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -188,7 +179,6 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
                         ),
                         child: Stack(
                           children: [
-                            // 2. TAMPILAN GAMBAR PRODUK DINAMIS
                             Center(
                               child: Image.asset(
                                 'assets/images/${item['image']}',

@@ -10,9 +10,6 @@ class NotificationScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (Tombol Back, Judul, & Option Icon)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -47,8 +44,6 @@ class NotificationScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-            // LIST NOTIFIKASI
             Expanded(
               child: ListView(
                 physics: const BouncingScrollPhysics(),
@@ -57,7 +52,6 @@ class NotificationScreen extends StatelessWidget {
                   vertical: 12,
                 ),
                 children: [
-                  // SECTION: TODAY
                   const Text(
                     'Today',
                     style: TextStyle(
@@ -73,8 +67,6 @@ class NotificationScreen extends StatelessWidget {
                     subtitle: 'Special promotion only valid today',
                   ),
                   const SizedBox(height: 24),
-
-                  // SECTION: YESTERDAY
                   const Text(
                     'Yesterday',
                     style: TextStyle(
@@ -96,8 +88,6 @@ class NotificationScreen extends StatelessWidget {
                     subtitle: 'Now you can track orders in real time',
                   ),
                   const SizedBox(height: 24),
-
-                  // SECTION: DECEMBER 22, 2024
                   const Text(
                     'December 22, 2024',
                     style: TextStyle(
@@ -127,8 +117,6 @@ class NotificationScreen extends StatelessWidget {
       ),
     );
   }
-
-  // WIDGET CARD NOTIFIKASI
   Widget _buildNotificationItem({
     required IconData icon,
     required String title,

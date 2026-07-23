@@ -11,7 +11,6 @@ class PaymentMethodsScreen extends StatefulWidget {
 class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
   int _selectedPaymentIndex = 0;
 
-  // 1. Menggunakan path asset gambar untuk tiap provider
   final List<Map<String, dynamic>> _paymentMethods = [
     {
       'title': 'My Wallet',
@@ -43,9 +42,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR
-
-            // HEADER
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -80,8 +76,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // SUBTITLE
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 24),
               child: Align(
@@ -93,8 +87,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
               ),
             ),
             const SizedBox(height: 20),
-
-            // PAYMENT LIST
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -129,14 +121,12 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                       ),
                       child: Row(
                         children: [
-                          // 2. TAMPILAN IMAGE LOGO
                           SizedBox(
                             width: 32,
                             height: 32,
                             child: Image.asset(
                               method['iconPath'] as String,
                               fit: BoxFit.contain,
-                              // Fallback / penanganan jika gambar gagal dipanggil:
                               errorBuilder: (context, error, stackTrace) =>
                                   const Icon(
                                     Icons.payment_rounded,
@@ -145,8 +135,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                             ),
                           ),
                           const SizedBox(width: 16),
-
-                          // TITLE
                           Expanded(
                             child: Text(
                               method['title'] as String,
@@ -157,8 +145,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                               ),
                             ),
                           ),
-
-                          // BALANCE
                           if (method['balance'] != null) ...[
                             Text(
                               method['balance'] as String,
@@ -170,8 +156,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                             ),
                             const SizedBox(width: 12),
                           ],
-
-                          // CUSTOM RADIO SELECTION
                           Container(
                             width: 22,
                             height: 22,
@@ -199,8 +183,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                 },
               ),
             ),
-
-            // BUTTON CONFIRM
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               child: SizedBox(

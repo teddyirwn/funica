@@ -101,7 +101,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // ISI KONTEN SCROLLABLE
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
@@ -110,8 +109,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 8),
-
-                    // 1. HEADER PROFILE & NOTIFICATION
                     Row(
                       children: [
                         const CircleAvatar(
@@ -182,8 +179,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       ],
                     ),
                     const SizedBox(height: 20),
-
-                    // 2. SEARCH BAR
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -229,8 +224,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       ),
                     ),
                     const SizedBox(height: 24),
-
-                    // 3. SPECIAL OFFERS SECTION
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -264,8 +257,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       ],
                     ),
                     const SizedBox(height: 16),
-
-                    // SPECIAL OFFERS BANNER CARD (GAMBAR DINAMIS + DOTS)
                     Container(
                       width: double.infinity,
                       height: 165,
@@ -312,7 +303,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                                 ),
                               ),
                               Image.asset(
-                                'assets/images/special_offer.png', // 👈 FILE GAMBAR KURSI UNTUK SPECIAL OFFER
+                                'assets/images/special_offer.png',
                                 height: 130,
                                 fit: BoxFit.contain,
                               ),
@@ -365,8 +356,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       ),
                     ),
                     const SizedBox(height: 24),
-
-                    // 4. CATEGORY GRID (8 ITEM)
                     GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
@@ -476,8 +465,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       },
                     ),
                     const SizedBox(height: 24),
-
-                    // 5. MOST POPULAR SECTION
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -511,7 +498,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                     ),
                     const SizedBox(height: 16),
 
-                    // HORIZONTAL CATEGORY CHIPS
                     SizedBox(
                       height: 38,
                       child: ListView.builder(
@@ -559,8 +545,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-
-                    // PRODUCT GRID (2 KOLOM)
                     GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
@@ -686,8 +670,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                 ),
               ),
             ),
-
-            // 6. BOTTOM NAVIGATION BAR
           ],
         ),
       ),

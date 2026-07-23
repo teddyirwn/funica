@@ -41,16 +41,12 @@ class _CupboardDetailsScreenState extends State<CupboardDetailsScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // CONTENT SCROLLABLE
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // BANNER GAMBAR PRODUK
                     Container(
                       height: 280,
                       width: double.infinity,
@@ -68,8 +64,6 @@ class _CupboardDetailsScreenState extends State<CupboardDetailsScreen> {
                               onPressed: () => Navigator.pop(context),
                             ),
                           ),
-
-                          // AREA TAMPILAN GAMBAR DINAMIS
                           Center(
                             child: Padding(
                               padding: const EdgeInsets.all(20.0),
@@ -117,8 +111,6 @@ class _CupboardDetailsScreenState extends State<CupboardDetailsScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-
-                    // DETAIL PRODUK
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: Column(
@@ -363,8 +355,6 @@ class _CupboardDetailsScreenState extends State<CupboardDetailsScreen> {
                 ),
               ),
             ),
-
-            // BOTTOM BAR (TOTAL PRICE & ADD TO CART)
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               decoration: BoxDecoration(
@@ -408,7 +398,6 @@ class _CupboardDetailsScreenState extends State<CupboardDetailsScreen> {
                       height: 54,
                       child: ElevatedButton.icon(
                         onPressed: () {
-                          // Navigasi ke halaman My Cart setelah produk ditambahkan
                           Navigator.push(
                             context,
                             MaterialPageRoute(

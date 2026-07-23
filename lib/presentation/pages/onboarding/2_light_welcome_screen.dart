@@ -19,7 +19,6 @@ class WelcomeScreen extends StatelessWidget {
         child: SizedBox.expand(
           child: Stack(
             children: [
-              // 1. Background Gambar Lampu
               Positioned.fill(
                 child: Image.asset(
                   'assets/images/bg_welcome.png',

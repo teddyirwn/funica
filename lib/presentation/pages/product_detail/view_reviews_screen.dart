@@ -13,8 +13,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
   int _selectedRatingFilter = 0;
 
   final List<String> _ratingFilters = ['All', '5', '4', '3', '2', '1'];
-
-  // 1. TAMBAHKAN PATH FILE GAMBAR PROFIL DI DUMMY DATA
   final List<Map<String, dynamic>> _reviewsList = [
     {
       'name': 'Darlene Robertson',
@@ -75,9 +73,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK BUTTON, TITLE, SEARCH ICON)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -111,8 +106,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // RATING FILTER CHIPS (HORIZONTAL SCROLL)
             SizedBox(
               height: 38,
               child: ListView.builder(
@@ -162,8 +155,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
               ),
             ),
             const SizedBox(height: 20),
-
-            // LIST OF REVIEWS
             Expanded(
               child: ListView.separated(
                 padding: const EdgeInsets.symmetric(
@@ -181,10 +172,8 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // USER HEADER (AVATAR, NAME, RATING BADGE, MORE ICON)
                       Row(
                         children: [
-                          // 2. MENGGUNAKAN backgroundImage DENGAN AssetImage & ERROR HANDLER
                           CircleAvatar(
                             radius: 20,
                             backgroundColor: const Color(0xFFF3F3F3),
@@ -192,7 +181,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                               'assets/images/${review['image']}',
                             ),
                             onBackgroundImageError: (exception, stackTrace) {
-                              // Tampilan fallback jika gambar gagal dimuat
                             },
                           ),
                           const SizedBox(width: 12),
@@ -206,7 +194,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                               ),
                             ),
                           ),
-                          // BADGE RATING ITEM
                           Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 12,
@@ -251,8 +238,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                         ],
                       ),
                       const SizedBox(height: 12),
-
-                      // COMMENT TEXT
                       Text(
                         review['comment'] as String,
                         style: TextStyle(
@@ -262,8 +247,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                         ),
                       ),
                       const SizedBox(height: 12),
-
-                      // LIKE & TIME AGO
                       Row(
                         children: [
                           GestureDetector(

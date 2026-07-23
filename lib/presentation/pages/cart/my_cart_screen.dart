@@ -11,8 +11,6 @@ class MyCartScreen extends StatefulWidget {
 }
 
 class _MyCartScreenState extends State<MyCartScreen> {
-
-  // DATA DUMMY CART ITEM SESUAI DESAIN UI
   final List<Map<String, dynamic>> _cartItems = [
     {
       'name': 'Lawson Chair',
@@ -47,8 +45,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
       'image': 'cart_4.png',
     },
   ];
-
-  // HITUNG TOTAL PRICE DINAMIS
   double get _totalPrice {
     double total = 0.0;
     for (var item in _cartItems) {
@@ -56,8 +52,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
     }
     return total;
   }
-
-  // FUNGSI MEMUNCULKAN BOTTOM SHEET "REMOVE FROM CART?" (SESUAI GAMBAR)
   void _showRemoveFromCartDialog(int index) {
     final item = _cartItems[index];
 
@@ -78,7 +72,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // INDIKATOR HANDLE BAR ATAS
               Container(
                 width: 38,
                 height: 3,
@@ -88,8 +81,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // JUDUL MODAL
               const Text(
                 'Remove From Cart?',
                 style: TextStyle(
@@ -101,8 +92,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
               const SizedBox(height: 16),
               const Divider(color: Color(0xFFEEEEEE), thickness: 1),
               const SizedBox(height: 16),
-
-              // ITEM CARD PREVIEW DENGAN QUANTITY SELECTOR (PERSIS ACUAN)
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -118,7 +107,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 ),
                 child: Row(
                   children: [
-                    // GAMBAR PRODUK
                     Container(
                       width: 80,
                       height: 80,
@@ -142,8 +130,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                       ),
                     ),
                     const SizedBox(width: 16),
-
-                    // DETAIL PRODUK
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,8 +178,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                   color: Color(0xFF1F1D2B),
                                 ),
                               ),
-
-                              // QUANTITY DISPLAY DI MODAL
                               Container(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 10,
@@ -242,11 +226,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
               const SizedBox(height: 20),
               const Divider(color: Color(0xFFEEEEEE), thickness: 1),
               const SizedBox(height: 20),
-
-              // TOMBOL CANCEL & YES, REMOVE (DESAIN BUNDAR/OVAL)
               Row(
                 children: [
-                  // TOMBOL CANCEL
                   Expanded(
                     child: SizedBox(
                       height: 54,
@@ -271,8 +252,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                     ),
                   ),
                   const SizedBox(width: 16),
-
-                  // TOMBOL YES, REMOVE
                   Expanded(
                     child: SizedBox(
                       height: 54,
@@ -332,9 +311,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // LIST CART ITEMS SCROLLABLE
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -358,7 +334,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                     ),
                     child: Row(
                       children: [
-                        // GAMBAR PRODUK
                         Container(
                           width: 90,
                           height: 90,
@@ -383,12 +358,10 @@ class _MyCartScreenState extends State<MyCartScreen> {
                         ),
                         const SizedBox(width: 16),
 
-                        // DETAIL PRODUK (NAMA, WARNA, HARGA)
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // NAMA & TOMBOL DELETE
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -405,7 +378,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                       ),
                                     ),
                                   ),
-                                  // TAP DELETE SEKARANG HANYA MEMANGGIL DIALOG REMOVE
                                   GestureDetector(
                                     onTap: () {
                                       _showRemoveFromCartDialog(index);
@@ -419,8 +391,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                 ],
                               ),
                               const SizedBox(height: 6),
-
-                              // DESKRIPSI WARNA
                               Row(
                                 children: [
                                   Container(
@@ -443,8 +413,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                 ],
                               ),
                               const SizedBox(height: 12),
-
-                              // HARGA & QUANTITY SELECTOR
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -457,8 +425,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                       color: Color(0xFF1F1D2B),
                                     ),
                                   ),
-
-                                  // QUANTITY SELECTOR
                                   Container(
                                     padding: const EdgeInsets.symmetric(
                                       horizontal: 10,
@@ -526,8 +492,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 },
               ),
             ),
-
-            // BOTTOM CHECKOUT BAR
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               decoration: BoxDecoration(
@@ -571,7 +535,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                       height: 54,
                       child: ElevatedButton(
                         onPressed: () {
-                          // NAVIGASI KE CHECKOUT SCREEN
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -611,8 +574,6 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 ],
               ),
             ),
-
-            // BOTTOM NAVIGATION BAR
           ],
         ),
       ),

@@ -9,7 +9,6 @@ class VaseCategoryScreen extends StatefulWidget {
 }
 
 class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
-  // LIST PRODUK VASE DENGAN NAMA FILE GAMBAR DINAMIS
   final List<Map<String, dynamic>> _vaseProducts = [
     {
       'name': 'Marble Flower Vase',
@@ -68,9 +67,6 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK, TITLE, SEARCH)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -104,8 +100,6 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // PRODUCT GRID (2 KOLOM)
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -128,7 +122,7 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
                             productName: item['name'] as String,
                             productImage:
                                 item['image']
-                                    as String, // 👈 MENGIRIM NAMA GAMBAR KE DETAILS SCREEN
+                                    as String, 
                             initialPrice: double.parse(
                               (item['price'] as String).replaceAll('\$', ''),
                             ),
@@ -148,7 +142,6 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
                           ),
                           child: Stack(
                             children: [
-                              // TAMPILAN GAMBAR PRODUK DINAMIS
                               Center(
                                 child: Image.asset(
                                   'assets/images/${item['image']}',

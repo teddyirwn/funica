@@ -8,7 +8,7 @@ class ChooseShippingScreen extends StatefulWidget {
 }
 
 class _ChooseShippingScreenState extends State<ChooseShippingScreen> {
-  int _selectedShippingIndex = 1; // Default Regular selected
+  int _selectedShippingIndex = 1;
 
   final List<Map<String, dynamic>> _shippingOptions = [
     {
@@ -44,9 +44,6 @@ class _ChooseShippingScreenState extends State<ChooseShippingScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -71,8 +68,6 @@ class _ChooseShippingScreenState extends State<ChooseShippingScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // SHIPPING OPTIONS LIST
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -166,8 +161,6 @@ class _ChooseShippingScreenState extends State<ChooseShippingScreen> {
                 },
               ),
             ),
-
-            // APPLY BUTTON
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               child: SizedBox(

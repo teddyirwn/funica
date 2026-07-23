@@ -24,8 +24,6 @@ class WalkthroughScreenFour extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Bagian Bawah: Kontainer Teks & Indikator Rapat di Tengah
             Expanded(
               flex: 4,
               child: Padding(
@@ -47,8 +45,6 @@ class WalkthroughScreenFour extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 24),
-
-                        // Indikator Dots tepat di bawah teks (Aktif di Kanan)
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -82,13 +78,10 @@ class WalkthroughScreenFour extends StatelessWidget {
                         ),
                       ],
                     ),
-
-                    // Tombol Get Started (Sudah dihubungkan ke Splash Screen)
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          // 2. Navigasi push ke SplashScreen
                           Navigator.push(
                             context,
                             MaterialPageRoute(

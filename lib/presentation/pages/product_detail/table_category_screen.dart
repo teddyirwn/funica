@@ -9,7 +9,6 @@ class TableCategoryScreen extends StatefulWidget {
 }
 
 class _TableCategoryScreenState extends State<TableCategoryScreen> {
-  // LIST PRODUK TABLE DENGAN NAMA FILE GAMBAR DINAMIS
   final List<Map<String, dynamic>> _tableProducts = [
     {
       'name': 'Mini Wooden Table',
@@ -68,9 +67,6 @@ class _TableCategoryScreenState extends State<TableCategoryScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK, TITLE, SEARCH)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -104,8 +100,6 @@ class _TableCategoryScreenState extends State<TableCategoryScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // PRODUCT GRID (2 KOLOM)
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -128,7 +122,7 @@ class _TableCategoryScreenState extends State<TableCategoryScreen> {
                             productName: item['name'] as String,
                             productImage:
                                 item['image']
-                                    as String, // 👈 MENGIRIM NAMA GAMBAR KE DETAILS SCREEN
+                                    as String,
                             initialPrice: double.parse(
                               (item['price'] as String).replaceAll('\$', ''),
                             ),
@@ -148,7 +142,6 @@ class _TableCategoryScreenState extends State<TableCategoryScreen> {
                           ),
                           child: Stack(
                             children: [
-                              // TAMPILAN GAMBAR PRODUK DINAMIS
                               Center(
                                 child: Image.asset(
                                   'assets/images/${item['image']}',

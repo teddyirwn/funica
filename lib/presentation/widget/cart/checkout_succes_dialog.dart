@@ -18,12 +18,9 @@ class CheckoutSuccessDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 8),
-
-            // ICON DEKORASI (KERANJANG DENGAN DOTS)
             Stack(
               alignment: Alignment.center,
               children: [
-                // Efek Dot/Lingkaran Kecil Dekoratif
                 SizedBox(
                   width: 150,
                   height: 150,
@@ -57,7 +54,6 @@ class CheckoutSuccessDialog extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Lingkaran Hitam Utama dengan Icon Cart
                 Container(
                   width: 100,
                   height: 100,
@@ -74,8 +70,6 @@ class CheckoutSuccessDialog extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-
-            // JUDUL & SUBTITLE
             const Text(
               'Order Successful!',
               style: TextStyle(
@@ -94,8 +88,6 @@ class CheckoutSuccessDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 28),
-
-            // TOMBOL 1: VIEW ORDER (HITAM)
             SizedBox(
               width: double.infinity,
               height: 52,
@@ -122,15 +114,12 @@ class CheckoutSuccessDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-
-            // TOMBOL 2: VIEW E-RECEIPT (ABU-ABU MUDA)
             SizedBox(
               width: double.infinity,
               height: 52,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
-                  // TODO: Navigasi ke Halaman E-Receipt
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFEBEBEB),

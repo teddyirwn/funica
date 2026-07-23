@@ -14,7 +14,7 @@ class LetsYouInScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Tombol Kembali (Back)
+              // 1. Back Button
               IconButton(
                 onPressed: () => Navigator.pop(context),
                 icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -22,8 +22,6 @@ class LetsYouInScreen extends StatelessWidget {
                 constraints: const BoxConstraints(),
               ),
               const SizedBox(height: 20),
-
-              // 2. Ilustrasi Gambar di Atas
               Center(
                 child: Image.asset(
                   'assets/images/bg_screen11.png',
@@ -32,8 +30,6 @@ class LetsYouInScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-
-              // 3. Judul "Let's you in"
               const Center(
                 child: Text(
                   "Let's you in",
@@ -45,16 +41,12 @@ class LetsYouInScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-
-              // 4. Tombol Continue with Facebook
               _buildSocialButtonCustom(
                 iconWidget: const Icon(Icons.facebook, color: Color(0xFF1877F2), size: 24),
                 text: 'Continue with Facebook',
                 onPressed: () {},
               ),
               const SizedBox(height: 16),
-
-              // 5. Tombol Continue with Google (Menggunakan gambar asset)
               _buildSocialButtonCustom(
                 iconWidget: Image.asset(
                   'assets/icons/Google.png',
@@ -65,16 +57,12 @@ class LetsYouInScreen extends StatelessWidget {
                 onPressed: () {},
               ),
               const SizedBox(height: 16),
-
-              // 6. Tombol Continue with Apple
               _buildSocialButtonCustom(
                 iconWidget: const Icon(Icons.apple, color: Colors.black, size: 24),
                 text: 'Continue with Apple',
                 onPressed: () {},
               ),
               const SizedBox(height: 24),
-
-              // 7. Garis Pembatas "or"
               Row(
                 children: const [
                   Expanded(child: Divider(color: Color(0xFFE0E0E0), thickness: 1)),
@@ -90,7 +78,7 @@ class LetsYouInScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
 
-              // 8. Tombol Sign in with password
+              // Tombol Sign in with password
               SizedBox(
                 width: double.infinity,
                 height: 52,
@@ -119,8 +107,6 @@ class LetsYouInScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-
-              // 9. Teks Bawah: Don't have an account? Sign up
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -153,8 +139,6 @@ class LetsYouInScreen extends StatelessWidget {
       ),
     );
   }
-
-  // Widget kustom untuk tombol sosial media agar bisa menerima Widget icon/gambar
   Widget _buildSocialButtonCustom({
     required Widget iconWidget,
     required String text,

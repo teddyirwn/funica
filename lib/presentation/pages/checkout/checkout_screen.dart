@@ -14,7 +14,6 @@ class CheckoutScreen extends StatefulWidget {
 class _CheckoutScreenState extends State<CheckoutScreen> {
   final TextEditingController _promoController = TextEditingController();
 
-  // 1. PATH GAMBAR DISESUAIKAN DENGAN checkout_1.png DST.
   final List<Map<String, dynamic>> _orderList = [
     {
       'name': 'Lawson Chair',
@@ -63,9 +62,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // STATUS BAR MANUAL
-
-            // HEADER (BACK BUTTON, TITLE, MORE OPTION)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Row(
@@ -99,8 +95,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               ),
             ),
             const SizedBox(height: 8),
-
-            // KONTEN SCROLLABLE
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
@@ -108,7 +102,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // 1. SHIPPING ADDRESS SECTION
                     const Text(
                       'Shipping Address',
                       style: TextStyle(
@@ -187,7 +180,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                 ),
                               );
                               if (selectedAddress != null) {
-                                // Update state alamat jika diperlukan
                               }
                             },
                           ),
@@ -195,8 +187,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ),
                     ),
                     const SizedBox(height: 24),
-
-                    // 2. ORDER LIST SECTION
                     const Text(
                       'Order List',
                       style: TextStyle(
@@ -206,8 +196,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ),
                     ),
                     const SizedBox(height: 12),
-
-                    // LIST OF ORDER ITEMS DENGAN GAMBAR ASSET
                     ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
@@ -230,7 +218,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           ),
                           child: Row(
                             children: [
-                              // KONTANER UNTUK GAMBAR
                               Container(
                                 width: 80,
                                 height: 80,
@@ -299,7 +286,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   ],
                                 ),
                               ),
-                              // Counter Badge Non-editable
                               Container(
                                 width: 32,
                                 height: 32,
@@ -324,8 +310,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       },
                     ),
                     const SizedBox(height: 12),
-
-                    // 3. CHOOSE SHIPPING SECTION
                     const Text(
                       'Choose Shipping',
                       style: TextStyle(
@@ -344,7 +328,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           ),
                         );
                         if (selectedShipping != null) {
-                          // Update state pilihan kurir
                         }
                       },
                       child: Container(
@@ -391,8 +374,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ),
                     ),
                     const SizedBox(height: 24),
-
-                    // 4. PROMO CODE SECTION
                     const Text(
                       'Promo Code',
                       style: TextStyle(
@@ -458,8 +439,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ],
                     ),
                     const SizedBox(height: 24),
-
-                    // 5. PRICE DETAILS CARD
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
@@ -545,8 +524,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 ),
               ),
             ),
-
-            // BOTTOM STICKY BUTTON
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               decoration: BoxDecoration(
@@ -571,7 +548,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ),
                     );
                     if (selectedPayment != null) {
-                      // Lanjutkan pembayaran
                     }
                   },
                   style: ElevatedButton.styleFrom(
