@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:funica/presentation/pages/auth/light_sign_in.dart';
 import 'package:funica/presentation/pages/help_center/help_center_page.dart';
 import 'package:funica/presentation/pages/profile/address_page.dart';
 import 'package:funica/presentation/pages/profile/edit_profile_page.dart';
@@ -170,7 +171,7 @@ class _ProfilePageState extends State<ProfilePage> {
               },
             ),
             ProfileMenuTile(
-              icon: "assets/icons/Info_square.svg",
+              icon: "assets/icons/Info_Square.svg",
               title: 'Help Center',
               onTap: () {
                 Navigator.push(
@@ -218,7 +219,18 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (context) {
-        return LogoutBottomSheet(onLogout: () {});
+        return LogoutBottomSheet(
+          onLogout: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return SignInScreen();
+                },
+              ),
+            );
+          },
+        );
       },
     );
   }

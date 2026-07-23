@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/auth/create_new_password_screen.dart';
 
@@ -41,7 +40,6 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
         if (_focusedIndex < 3) {
           _focusedIndex++;
         } else {
-
           FocusScope.of(context).unfocus();
         }
       });
@@ -72,42 +70,6 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
       body: SizedBox.expand(
         child: Stack(
           children: [
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: SafeArea(
-                bottom: false,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        '9:41',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                          const SizedBox(width: 5),
-                          const Icon(Icons.wifi, size: 18, color: Colors.black),
-                          const SizedBox(width: 5),
-                          Transform.rotate(
-                            angle: math.pi / 2,
-                            child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
             Positioned(
               top: 50,
               left: 12,
@@ -145,10 +107,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     const Text(
                       'Code has been send to +1 111 ******99',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF1F1D2B),
-                      ),
+                      style: TextStyle(fontSize: 16, color: Color(0xFF1F1D2B)),
                     ),
                     const SizedBox(height: 40),
                     Row(
@@ -198,11 +157,14 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                       height: 56,
                       child: ElevatedButton(
                         onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const CreateNewPasswordScreen()),
-                        );
-                      },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const CreateNewPasswordScreen(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF35383F),
                           shape: RoundedRectangleBorder(
@@ -231,21 +193,36 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               height: 280,
               child: Container(
                 color: const Color(0xFFFAFAFA),
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 16,
+                ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: ['1', '2', '3'].map((val) => _buildKey(val)).toList(),
+                      children: [
+                        '1',
+                        '2',
+                        '3',
+                      ].map((val) => _buildKey(val)).toList(),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: ['4', '5', '6'].map((val) => _buildKey(val)).toList(),
+                      children: [
+                        '4',
+                        '5',
+                        '6',
+                      ].map((val) => _buildKey(val)).toList(),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: ['7', '8', '9'].map((val) => _buildKey(val)).toList(),
+                      children: [
+                        '7',
+                        '8',
+                        '9',
+                      ].map((val) => _buildKey(val)).toList(),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -257,7 +234,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                             onTap: _onBackspacePressed,
                             child: const SizedBox(
                               height: 50,
-                              child: Icon(Icons.backspace_outlined, color: Color(0xFF1F1D2B), size: 20),
+                              child: Icon(
+                                Icons.backspace_outlined,
+                                color: Color(0xFF1F1D2B),
+                                size: 20,
+                              ),
                             ),
                           ),
                         ),

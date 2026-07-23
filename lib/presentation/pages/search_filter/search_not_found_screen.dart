@@ -1,15 +1,10 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/search_filter/sort_filter_bottom_sheet.dart';
-
 
 class SearchNotFoundScreen extends StatefulWidget {
   final String keyword;
 
-  const SearchNotFoundScreen({
-    super.key,
-    this.keyword = 'Abcdefghijk',
-  });
+  const SearchNotFoundScreen({super.key, this.keyword = 'Abcdefghijk'});
 
   @override
   State<SearchNotFoundScreen> createState() => _SearchNotFoundScreenState();
@@ -38,34 +33,6 @@ class _SearchNotFoundScreenState extends State<SearchNotFoundScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // SEARCH BAR
             Padding(
@@ -73,19 +40,29 @@ class _SearchNotFoundScreenState extends State<SearchNotFoundScreen> {
               child: TextField(
                 controller: _searchController,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.search_rounded, color: Colors.grey, size: 22),
+                  prefixIcon: const Icon(
+                    Icons.search_rounded,
+                    color: Colors.grey,
+                    size: 22,
+                  ),
                   suffixIcon: IconButton(
-                  icon: const Icon(Icons.tune_rounded, color: Color(0xFF1F1D2B), size: 20),
-                  onPressed: () {
-                    // Memunculkan Modal Bottom Sheet
-                    showModalBottomSheet(
-                      context: context,
-                      isScrollControlled: true, // Agar tinggi modal bisa menyesuaikan konten
-                      backgroundColor: Colors.transparent, // Background transparan agar sudut melengkung terlihat
-                      builder: (context) => const SortFilterBottomSheet(),
-                    );
-                  },
-                ),
+                    icon: const Icon(
+                      Icons.tune_rounded,
+                      color: Color(0xFF1F1D2B),
+                      size: 20,
+                    ),
+                    onPressed: () {
+                      // Memunculkan Modal Bottom Sheet
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled:
+                            true, // Agar tinggi modal bisa menyesuaikan konten
+                        backgroundColor: Colors
+                            .transparent, // Background transparan agar sudut melengkung terlihat
+                        builder: (context) => const SortFilterBottomSheet(),
+                      );
+                    },
+                  ),
                   filled: true,
                   fillColor: const Color(0xFFFAFAFA),
                   contentPadding: const EdgeInsets.symmetric(vertical: 14),

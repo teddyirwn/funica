@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/cart/add_promo_screen.dart';
 import 'package:funica/presentation/pages/cart/choose_shipping_screen.dart';
@@ -65,34 +64,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // HEADER (BACK BUTTON, TITLE, MORE OPTION)
             Padding(
@@ -100,7 +71,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   const SizedBox(width: 4),
@@ -115,7 +89,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.more_horiz_rounded, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.more_horiz_rounded,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -196,11 +173,18 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             ),
                           ),
                           IconButton(
-                            icon: const Icon(Icons.edit_outlined, color: Color(0xFF1F1D2B), size: 20),
+                            icon: const Icon(
+                              Icons.edit_outlined,
+                              color: Color(0xFF1F1D2B),
+                              size: 20,
+                            ),
                             onPressed: () async {
                               final selectedAddress = await Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const ShippingAddressScreen()),
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ShippingAddressScreen(),
+                                ),
                               );
                               if (selectedAddress != null) {
                                 // Update state alamat jika diperlukan
@@ -355,14 +339,19 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       onTap: () async {
                         final selectedShipping = await Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const ChooseShippingScreen()),
+                          MaterialPageRoute(
+                            builder: (context) => const ChooseShippingScreen(),
+                          ),
                         );
                         if (selectedShipping != null) {
                           // Update state pilihan kurir
                         }
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 14,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
@@ -376,7 +365,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         ),
                         child: const Row(
                           children: [
-                            Icon(Icons.local_shipping_rounded, color: Color(0xFF1F1D2B), size: 20),
+                            Icon(
+                              Icons.local_shipping_rounded,
+                              color: Color(0xFF1F1D2B),
+                              size: 20,
+                            ),
                             SizedBox(width: 12),
                             Expanded(
                               child: Text(
@@ -388,7 +381,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                 ),
                               ),
                             ),
-                            Icon(Icons.arrow_forward_ios_rounded, color: Color(0xFF1F1D2B), size: 16),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Color(0xFF1F1D2B),
+                              size: 16,
+                            ),
                           ],
                         ),
                       ),
@@ -419,7 +416,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               controller: _promoController,
                               decoration: const InputDecoration(
                                 hintText: 'Enter Promo Code',
-                                hintStyle: TextStyle(fontSize: 13, color: Colors.grey),
+                                hintStyle: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.grey,
+                                ),
                                 border: InputBorder.none,
                               ),
                             ),
@@ -436,7 +436,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             );
                             if (selectedPromo != null) {
                               setState(() {
-                                _promoController.text = selectedPromo['title'] as String;
+                                _promoController.text =
+                                    selectedPromo['title'] as String;
                               });
                             }
                           },
@@ -447,7 +448,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               color: Color(0xFF1F1D2B),
                               shape: BoxShape.circle,
                             ),
-                            child: const Icon(Icons.add, color: Colors.white, size: 22),
+                            child: const Icon(
+                              Icons.add,
+                              color: Colors.white,
+                              size: 22,
+                            ),
                           ),
                         ),
                       ],
@@ -473,7 +478,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Amount', style: TextStyle(fontSize: 13, color: Colors.grey[600])),
+                              Text(
+                                'Amount',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
                               const Text(
                                 '\$645.00',
                                 style: TextStyle(
@@ -488,8 +499,20 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Shipping', style: TextStyle(fontSize: 13, color: Colors.grey[600])),
-                              Text('-', style: TextStyle(fontSize: 14, color: Colors.grey[600])),
+                              Text(
+                                'Shipping',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                              Text(
+                                '-',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
                             ],
                           ),
                           const SizedBox(height: 12),
@@ -498,8 +521,20 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Total', style: TextStyle(fontSize: 13, color: Colors.grey[600])),
-                              Text('-', style: TextStyle(fontSize: 14, color: Colors.grey[600])),
+                              Text(
+                                'Total',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                              Text(
+                                '-',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
                             ],
                           ),
                         ],

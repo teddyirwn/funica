@@ -1,7 +1,5 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/auth/checkout_succes_dialog.dart';
-
 
 class EnterPinScreen extends StatefulWidget {
   const EnterPinScreen({super.key});
@@ -11,7 +9,8 @@ class EnterPinScreen extends StatefulWidget {
 }
 
 class _EnterPinScreenState extends State<EnterPinScreen> {
-  String _pin = "9999"; // Simulasi PIN terisi default sesuai UI gambar (4 digit)
+  String _pin =
+      "9999"; // Simulasi PIN terisi default sesuai UI gambar (4 digit)
 
   void _onKeyTap(String value) {
     if (_pin.length < 4) {
@@ -37,34 +36,6 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // HEADER (BACK BUTTON, TITLE)
             Padding(
@@ -72,7 +43,10 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   const SizedBox(width: 4),
@@ -94,10 +68,7 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                 children: [
                   const Text(
                     'Enter your PIN to confirm payment',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                    ),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                   const SizedBox(height: 40),
 
@@ -105,7 +76,8 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(4, (index) {
-                      final isFocused = _pin.length == index ||
+                      final isFocused =
+                          _pin.length == index ||
                           (_pin.length == 4 && index == 3);
                       final hasValue = index < _pin.length;
                       final isLastInputAndFilled =
@@ -128,22 +100,22 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                         child: Center(
                           child: hasValue
                               ? (isLastInputAndFilled && _pin.length == 4
-                                  ? Text(
-                                      _pin[index],
-                                      style: const TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Color(0xFF1F1D2B),
-                                      ),
-                                    )
-                                  : Container(
-                                      width: 16,
-                                      height: 16,
-                                      decoration: const BoxDecoration(
-                                        color: Color(0xFF1F1D2B),
-                                        shape: BoxShape.circle,
-                                      ),
-                                    ))
+                                    ? Text(
+                                        _pin[index],
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xFF1F1D2B),
+                                        ),
+                                      )
+                                    : Container(
+                                        width: 16,
+                                        height: 16,
+                                        decoration: const BoxDecoration(
+                                          color: Color(0xFF1F1D2B),
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ))
                               : null,
                         ),
                       );
@@ -159,20 +131,22 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                       height: 52,
                       child: ElevatedButton(
                         onPressed: _pin.length == 4
-                          ? () {
-                              showDialog(
-                                context: context,
-                                barrierDismissible: false, // Mencegah popup tertutup jika diklik diluar
-                                builder: (BuildContext context) {
-                                  return const CheckoutSuccessDialog();
-                                },
-                              );
-                            }
-                          : null,
+                            ? () {
+                                showDialog(
+                                  context: context,
+                                  barrierDismissible:
+                                      false, // Mencegah popup tertutup jika diklik diluar
+                                  builder: (BuildContext context) {
+                                    return const CheckoutSuccessDialog();
+                                  },
+                                );
+                              }
+                            : null,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF1F1D2B),
-                          disabledBackgroundColor:
-                              const Color(0xFF1F1D2B).withOpacity(0.5),
+                          disabledBackgroundColor: const Color(
+                            0xFF1F1D2B,
+                          ).withOpacity(0.5),
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(26),
@@ -226,8 +200,11 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
         children: keys.map((key) {
           if (key == 'backspace') {
             return IconButton(
-              icon: const Icon(Icons.backspace_outlined,
-                  color: Color(0xFF1F1D2B), size: 22),
+              icon: const Icon(
+                Icons.backspace_outlined,
+                color: Color(0xFF1F1D2B),
+                size: 22,
+              ),
               onPressed: _onBackspace,
             );
           }

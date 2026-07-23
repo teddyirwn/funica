@@ -1,8 +1,6 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:funica/presentation/pages/cart/my_cart_screen.dart';
 import 'package:funica/presentation/pages/product_detail/view_reviews_screen.dart';
-
 
 class ChairDetailsScreen extends StatefulWidget {
   final String productName;
@@ -45,34 +43,6 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // CONTENT SCROLLABLE
             Expanded(
@@ -92,11 +62,14 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                             top: 10,
                             left: 12,
                             child: IconButton(
-                              icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                              icon: const Icon(
+                                Icons.arrow_back,
+                                color: Color(0xFF1F1D2B),
+                              ),
                               onPressed: () => Navigator.pop(context),
                             ),
                           ),
-                          
+
                           // AREA TAMPILAN GAMBAR DINAMIS
                           Center(
                             child: Padding(
@@ -167,7 +140,9 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                               ),
                               IconButton(
                                 icon: Icon(
-                                  _isFavorite ? Icons.favorite_rounded : Icons.favorite_border_rounded,
+                                  _isFavorite
+                                      ? Icons.favorite_rounded
+                                      : Icons.favorite_border_rounded,
                                   color: const Color(0xFF1F1D2B),
                                   size: 26,
                                 ),
@@ -184,7 +159,10 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                           Row(
                             children: [
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 4,
+                                ),
                                 decoration: BoxDecoration(
                                   color: const Color(0xFFECECEC),
                                   borderRadius: BorderRadius.circular(6),
@@ -199,22 +177,31 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                                 ),
                               ),
                               const SizedBox(width: 12),
-                              const Icon(Icons.star_rounded, size: 18, color: Color(0xFF1F1D2B)),
+                              const Icon(
+                                Icons.star_rounded,
+                                size: 18,
+                                color: Color(0xFF1F1D2B),
+                              ),
                               const SizedBox(width: 4),
                               GestureDetector(
                                 onTap: () {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const ViewReviewsScreen(
-                                        ratingText: '4.7 (7,376 reviews)',
-                                      ),
+                                      builder: (context) =>
+                                          const ViewReviewsScreen(
+                                            ratingText: '4.7 (7,376 reviews)',
+                                          ),
                                     ),
                                   );
                                 },
                                 child: const Row(
                                   children: [
-                                    Icon(Icons.star_rounded, size: 18, color: Color(0xFF1F1D2B)),
+                                    Icon(
+                                      Icons.star_rounded,
+                                      size: 18,
+                                      color: Color(0xFF1F1D2B),
+                                    ),
                                     SizedBox(width: 4),
                                     Text(
                                       '4.7 (7,376 reviews)',
@@ -226,7 +213,7 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                                     ),
                                   ],
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           const SizedBox(height: 20),
@@ -276,7 +263,9 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                           ),
                           const SizedBox(height: 12),
                           Row(
-                            children: List.generate(_availableColors.length, (index) {
+                            children: List.generate(_availableColors.length, (
+                              index,
+                            ) {
                               final isSelected = index == _selectedColorIndex;
                               return GestureDetector(
                                 onTap: () {
@@ -317,7 +306,10 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                               ),
                               const SizedBox(width: 20),
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 6,
+                                ),
                                 decoration: BoxDecoration(
                                   color: const Color(0xFFFAFAFA),
                                   borderRadius: BorderRadius.circular(20),
@@ -330,10 +322,16 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                                           setState(() => _quantity--);
                                         }
                                       },
-                                      child: const Icon(Icons.remove, size: 20, color: Color(0xFF1F1D2B)),
+                                      child: const Icon(
+                                        Icons.remove,
+                                        size: 20,
+                                        color: Color(0xFF1F1D2B),
+                                      ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16,
+                                      ),
                                       child: Text(
                                         '$_quantity',
                                         style: const TextStyle(
@@ -347,7 +345,11 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                                       onTap: () {
                                         setState(() => _quantity++);
                                       },
-                                      child: const Icon(Icons.add, size: 20, color: Color(0xFF1F1D2B)),
+                                      child: const Icon(
+                                        Icons.add,
+                                        size: 20,
+                                        color: Color(0xFF1F1D2B),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -388,10 +390,7 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                     children: [
                       Text(
                         'Total price',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey[600],
-                        ),
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                       ),
                       const SizedBox(height: 4),
                       Text(
@@ -425,7 +424,11 @@ class _ChairDetailsScreenState extends State<ChairDetailsScreen> {
                             borderRadius: BorderRadius.circular(27),
                           ),
                         ),
-                        icon: const Icon(Icons.shopping_bag_rounded, color: Colors.white, size: 18),
+                        icon: const Icon(
+                          Icons.shopping_bag_rounded,
+                          color: Colors.white,
+                          size: 18,
+                        ),
                         label: const Text(
                           'Add to Cart',
                           style: TextStyle(

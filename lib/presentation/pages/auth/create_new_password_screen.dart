@@ -7,7 +7,8 @@ class CreateNewPasswordScreen extends StatefulWidget {
   const CreateNewPasswordScreen({super.key});
 
   @override
-  State<CreateNewPasswordScreen> createState() => _CreateNewPasswordScreenState();
+  State<CreateNewPasswordScreen> createState() =>
+      _CreateNewPasswordScreenState();
 }
 
 class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
@@ -26,9 +27,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
       if (mounted) {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(
-            builder: (context) => const HomeDashboardScreen(),
-          ),
+          MaterialPageRoute(builder: (context) => const HomeDashboardScreen()),
           (route) => false,
         );
       }
@@ -45,42 +44,6 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
             // =========================================================
             // 1. TAMPILAN UTAMA SCREEN
             // =========================================================
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: SafeArea(
-                bottom: false,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        '9:41',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                          const SizedBox(width: 5),
-                          const Icon(Icons.wifi, size: 18, color: Colors.black),
-                          const SizedBox(width: 5),
-                          Transform.rotate(
-                            angle: math.pi / 2,
-                            child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
             Positioned(
               top: 50,
               left: 12,
@@ -121,7 +84,11 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                         height: 250,
                         fit: BoxFit.contain,
                         errorBuilder: (context, error, stackTrace) =>
-                            const Icon(Icons.lock_reset_rounded, size: 150, color: Color(0xFF1F1D2B)),
+                            const Icon(
+                              Icons.lock_reset_rounded,
+                              size: 150,
+                              color: Color(0xFF1F1D2B),
+                            ),
                       ),
                     ),
                     const Spacer(),
@@ -139,10 +106,16 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: const Color(0xFFFAFAFA),
-                        prefixIcon: const Icon(Icons.lock_rounded, color: Color(0xFF1F1D2B), size: 20),
+                        prefixIcon: const Icon(
+                          Icons.lock_rounded,
+                          color: Color(0xFF1F1D2B),
+                          size: 20,
+                        ),
                         suffixIcon: IconButton(
                           icon: Icon(
-                            _obscurePassword1 ? Icons.visibility_off_rounded : Icons.visibility_rounded,
+                            _obscurePassword1
+                                ? Icons.visibility_off_rounded
+                                : Icons.visibility_rounded,
                             color: const Color(0xFF1F1D2B),
                             size: 20,
                           ),
@@ -156,7 +129,9 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                           borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide.none,
                         ),
-                        contentPadding: const EdgeInsets.symmetric(vertical: 18),
+                        contentPadding: const EdgeInsets.symmetric(
+                          vertical: 18,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 16),
@@ -165,10 +140,16 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: const Color(0xFFFAFAFA),
-                        prefixIcon: const Icon(Icons.lock_rounded, color: Color(0xFF1F1D2B), size: 20),
+                        prefixIcon: const Icon(
+                          Icons.lock_rounded,
+                          color: Color(0xFF1F1D2B),
+                          size: 20,
+                        ),
                         suffixIcon: IconButton(
                           icon: Icon(
-                            _obscurePassword2 ? Icons.visibility_off_rounded : Icons.visibility_rounded,
+                            _obscurePassword2
+                                ? Icons.visibility_off_rounded
+                                : Icons.visibility_rounded,
                             color: const Color(0xFF1F1D2B),
                             size: 20,
                           ),
@@ -182,7 +163,9 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                           borderRadius: BorderRadius.circular(16),
                           borderSide: BorderSide.none,
                         ),
-                        contentPadding: const EdgeInsets.symmetric(vertical: 18),
+                        contentPadding: const EdgeInsets.symmetric(
+                          vertical: 18,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 24),
@@ -199,7 +182,9 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                             width: 24,
                             height: 24,
                             decoration: BoxDecoration(
-                              color: _rememberMe ? const Color(0xFF1F1D2B) : Colors.white,
+                              color: _rememberMe
+                                  ? const Color(0xFF1F1D2B)
+                                  : Colors.white,
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(
                                 color: const Color(0xFF1F1D2B),
@@ -460,7 +445,7 @@ class _DottedSpinnerPainter extends CustomPainter {
       final double angle = (i * 2 * math.pi) / dotCount;
       // Ukuran titik mengecil perlahan memutar untuk efek trail/ekor animasi
       final double dotRadius = (size.width * 0.08) * ((i + 1) / dotCount) + 1.5;
-      
+
       final double x = center + (radius - 6) * math.cos(angle);
       final double y = center + (radius - 6) * math.sin(angle);
 

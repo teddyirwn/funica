@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 class MostPopularScreen extends StatefulWidget {
@@ -17,7 +16,7 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
     'Chair',
     'Table',
     'Kitchen',
-    'Lamp'
+    'Lamp',
   ];
 
   // 1. MENGGANTI 'icon' MENJADI NAMA FILE GAMBAR ('image')
@@ -80,34 +79,6 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // HEADER (BACK, TITLE, SEARCH)
             Padding(
@@ -115,7 +86,10 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   const SizedBox(width: 4),
@@ -130,7 +104,10 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.search_rounded, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.search_rounded,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -157,7 +134,9 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
                       margin: const EdgeInsets.only(right: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
-                        color: isSelected ? const Color(0xFF1F1D2B) : Colors.white,
+                        color: isSelected
+                            ? const Color(0xFF1F1D2B)
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
                           color: const Color(0xFF1F1D2B),
@@ -168,7 +147,9 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
                         child: Text(
                           _categories[index],
                           style: TextStyle(
-                            color: isSelected ? Colors.white : const Color(0xFF1F1D2B),
+                            color: isSelected
+                                ? Colors.white
+                                : const Color(0xFF1F1D2B),
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
                           ),
@@ -227,7 +208,8 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
                               child: GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    item['isFavorite'] = !(item['isFavorite'] as bool);
+                                    item['isFavorite'] =
+                                        !(item['isFavorite'] as bool);
                                   });
                                 },
                                 child: Container(
@@ -263,7 +245,11 @@ class _MostPopularScreenState extends State<MostPopularScreen> {
                       const SizedBox(height: 6),
                       Row(
                         children: [
-                          const Icon(Icons.star_rounded, size: 16, color: Color(0xFF1F1D2B)),
+                          const Icon(
+                            Icons.star_rounded,
+                            size: 16,
+                            color: Color(0xFF1F1D2B),
+                          ),
                           const SizedBox(width: 4),
                           Text(
                             item['rating'] as String,
