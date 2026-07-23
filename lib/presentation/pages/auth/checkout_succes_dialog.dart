@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:funica/presentation/pages/eWallet/e_receipt_page.dart';
 import 'package:funica/presentation/pages/home_dashboard_screen.dart';
 import 'package:funica/presentation/pages/order/order_page.dart';
 import 'package:funica/presentation/widget/e_receipt/menu_pop_up.dart';
@@ -10,9 +11,7 @@ class CheckoutSuccessDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(36),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
       elevation: 0,
       backgroundColor: Colors.white,
       insetPadding: const EdgeInsets.symmetric(horizontal: 28),
@@ -30,31 +29,11 @@ class CheckoutSuccessDialog extends StatelessWidget {
                   height: 150,
                   child: Stack(
                     children: [
-                      Positioned(
-                        top: 8,
-                        left: 16,
-                        child: _buildDot(16),
-                      ),
-                      Positioned(
-                        top: 20,
-                        right: 20,
-                        child: _buildDot(12),
-                      ),
-                      Positioned(
-                        left: 10,
-                        bottom: 40,
-                        child: _buildDot(8),
-                      ),
-                      Positioned(
-                        right: 12,
-                        bottom: 30,
-                        child: _buildDot(6),
-                      ),
-                      Positioned(
-                        bottom: 10,
-                        left: 50,
-                        child: _buildDot(6),
-                      ),
+                      Positioned(top: 8, left: 16, child: _buildDot(16)),
+                      Positioned(top: 20, right: 20, child: _buildDot(12)),
+                      Positioned(left: 10, bottom: 40, child: _buildDot(8)),
+                      Positioned(right: 12, bottom: 30, child: _buildDot(6)),
+                      Positioned(bottom: 10, left: 50, child: _buildDot(6)),
                     ],
                   ),
                 ),
@@ -88,10 +67,7 @@ class CheckoutSuccessDialog extends StatelessWidget {
             Text(
               'You have successfully made order',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 13,
-                color: Colors.grey[600],
-              ),
+              style: TextStyle(fontSize: 13, color: Colors.grey[600]),
             ),
             const SizedBox(height: 28),
 
@@ -102,9 +78,9 @@ class CheckoutSuccessDialog extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const OrderPage()),
-                    );
+                    context,
+                    MaterialPageRoute(builder: (context) => const OrderPage()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF1F1D2B),
@@ -134,7 +110,7 @@ class CheckoutSuccessDialog extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ReceiptPopupMenu(),
+                      builder: (context) => const EReceiptPage(),
                     ),
                   );
                 },

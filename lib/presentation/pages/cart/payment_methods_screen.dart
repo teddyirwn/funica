@@ -19,11 +19,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
       'balance': '\$9,379',
       'iconPath': 'assets/icons/wallet.png',
     },
-    {
-      'title': 'PayPal',
-      'balance': null,
-      'iconPath': 'assets/icons/Paypal.png',
-    },
+    {'title': 'PayPal', 'balance': null, 'iconPath': 'assets/icons/Paypal.png'},
     {
       'title': 'Google Pay',
       'balance': null,
@@ -49,34 +45,6 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
         child: Column(
           children: [
             // STATUS BAR
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // HEADER
             Padding(
@@ -84,7 +52,10 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   const SizedBox(width: 4),
@@ -99,7 +70,11 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.add_circle_outline_rounded, color: Color(0xFF1F1D2B), size: 24),
+                    icon: const Icon(
+                      Icons.add_circle_outline_rounded,
+                      color: Color(0xFF1F1D2B),
+                      size: 24,
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -114,10 +89,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Select the payment method you want to use.',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(fontSize: 13, color: Colors.grey),
                 ),
               ),
             ),
@@ -167,7 +139,10 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                               fit: BoxFit.contain,
                               // Fallback / penanganan jika gambar gagal dipanggil:
                               errorBuilder: (context, error, stackTrace) =>
-                                  const Icon(Icons.payment_rounded, color: Color(0xFF1F1D2B)),
+                                  const Icon(
+                                    Icons.payment_rounded,
+                                    color: Color(0xFF1F1D2B),
+                                  ),
                             ),
                           ),
                           const SizedBox(width: 16),

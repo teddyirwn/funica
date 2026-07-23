@@ -40,34 +40,6 @@ class SpecialOffersScreen extends StatelessWidget {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // HEADER (BACK, TITLE, MORE)
             Padding(
@@ -75,7 +47,10 @@ class SpecialOffersScreen extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   const SizedBox(width: 4),
@@ -90,7 +65,10 @@ class SpecialOffersScreen extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.more_horiz_rounded, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.more_horiz_rounded,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -100,7 +78,10 @@ class SpecialOffersScreen extends StatelessWidget {
             // LIST CARDS SPECIAL OFFERS
             Expanded(
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 12,
+                ),
                 physics: const BouncingScrollPhysics(),
                 itemCount: offers.length,
                 itemBuilder: (context, index) {

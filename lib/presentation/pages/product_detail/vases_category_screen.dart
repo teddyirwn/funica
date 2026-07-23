@@ -70,34 +70,6 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // HEADER (BACK, TITLE, SEARCH)
             Padding(
@@ -105,7 +77,10 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   const SizedBox(width: 4),
@@ -120,7 +95,10 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.search_rounded, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.search_rounded,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -149,7 +127,9 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
                         MaterialPageRoute(
                           builder: (context) => VaseDetailsScreen(
                             productName: item['name'] as String,
-                            productImage: item['image'] as String, // 👈 MENGIRIM NAMA GAMBAR KE DETAILS SCREEN
+                            productImage:
+                                item['image']
+                                    as String, // 👈 MENGIRIM NAMA GAMBAR KE DETAILS SCREEN
                             initialPrice: double.parse(
                               (item['price'] as String).replaceAll('\$', ''),
                             ),
@@ -189,7 +169,8 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
                                 child: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      item['isFavorite'] = !(item['isFavorite'] as bool);
+                                      item['isFavorite'] =
+                                          !(item['isFavorite'] as bool);
                                     });
                                   },
                                   child: Container(
@@ -225,7 +206,11 @@ class _VaseCategoryScreenState extends State<VaseCategoryScreen> {
                         const SizedBox(height: 6),
                         Row(
                           children: [
-                            const Icon(Icons.star_rounded, size: 16, color: Color(0xFF1F1D2B)),
+                            const Icon(
+                              Icons.star_rounded,
+                              size: 16,
+                              color: Color(0xFF1F1D2B),
+                            ),
                             const SizedBox(width: 4),
                             Text(
                               item['rating'] as String,

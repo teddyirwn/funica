@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:funica/presentation/pages/auth/create_new_password_screen.dart';
 import 'package:funica/presentation/widget/customAppbarWidget.dart';
 import 'package:funica/presentation/widget/customSecondaryButton.dart';
 import 'package:funica/presentation/widget/profilePage/security_switch_tile.dart';
@@ -72,7 +73,19 @@ class _SecurityPageState extends State<SecurityPage> {
 
                   Customsecondarybutton(text: "Change PIN"),
                   const SizedBox(height: 16.0),
-                  Customsecondarybutton(text: "Change Password"),
+                  Customsecondarybutton(
+                    text: "Change Password",
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CreateNewPasswordScreen();
+                          },
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

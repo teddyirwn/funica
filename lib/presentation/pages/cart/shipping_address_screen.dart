@@ -42,34 +42,6 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // HEADER
             Padding(
@@ -77,7 +49,10 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   const SizedBox(width: 4),
@@ -156,10 +131,14 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
                                       const SizedBox(width: 8),
                                       Container(
                                         padding: const EdgeInsets.symmetric(
-                                            horizontal: 8, vertical: 2),
+                                          horizontal: 8,
+                                          vertical: 2,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: const Color(0xFFECECEC),
-                                          borderRadius: BorderRadius.circular(6),
+                                          borderRadius: BorderRadius.circular(
+                                            6,
+                                          ),
                                         ),
                                         child: const Text(
                                           'Default',
@@ -240,7 +219,10 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
                     height: 52,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pop(context, _addresses[_selectedAddressIndex]);
+                        Navigator.pop(
+                          context,
+                          _addresses[_selectedAddressIndex],
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF1F1D2B),

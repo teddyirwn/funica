@@ -39,34 +39,6 @@ class _SearchPageState extends State<SearchPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
               child: TextField(
                 controller: _searchController,
@@ -74,25 +46,38 @@ class _SearchPageState extends State<SearchPage> {
                 decoration: InputDecoration(
                   hintText: 'Search',
                   hintStyle: TextStyle(color: Colors.grey[400], fontSize: 15),
-                  prefixIcon: const Icon(Icons.search_rounded, color: Colors.grey, size: 22),
+                  prefixIcon: const Icon(
+                    Icons.search_rounded,
+                    color: Colors.grey,
+                    size: 22,
+                  ),
                   suffixIcon: IconButton(
-                  icon: const Icon(Icons.tune_rounded, color: Color(0xFF1F1D2B), size: 20),
-                  onPressed: () {
-                    // Memunculkan Modal Bottom Sheet
-                    showModalBottomSheet(
-                      context: context,
-                      isScrollControlled: true, // Agar tinggi modal bisa menyesuaikan konten
-                      backgroundColor: Colors.transparent, // Background transparan agar sudut melengkung terlihat
-                      builder: (context) => const SortFilterBottomSheet(),
-                    );
-                  },
-                ),
+                    icon: const Icon(
+                      Icons.tune_rounded,
+                      color: Color(0xFF1F1D2B),
+                      size: 20,
+                    ),
+                    onPressed: () {
+                      // Memunculkan Modal Bottom Sheet
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled:
+                            true, // Agar tinggi modal bisa menyesuaikan konten
+                        backgroundColor: Colors
+                            .transparent, // Background transparan agar sudut melengkung terlihat
+                        builder: (context) => const SortFilterBottomSheet(),
+                      );
+                    },
+                  ),
                   filled: true,
                   fillColor: const Color(0xFFFAFAFA),
                   contentPadding: const EdgeInsets.symmetric(vertical: 14),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(color: Color(0xFF1F1D2B), width: 1.5),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF1F1D2B),
+                      width: 1.5,
+                    ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
@@ -106,7 +91,8 @@ class _SearchPageState extends State<SearchPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SearchResultListScreen(keyword: value),
+                          builder: (context) =>
+                              SearchResultListScreen(keyword: value),
                         ),
                       );
                     } else {
@@ -114,7 +100,8 @@ class _SearchPageState extends State<SearchPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SearchNotFoundScreen(keyword: value),
+                          builder: (context) =>
+                              SearchNotFoundScreen(keyword: value),
                         ),
                       );
                     }
@@ -189,7 +176,10 @@ class _SearchPageState extends State<SearchPage> {
                             padding: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(color: Colors.grey[400]!, width: 1.5),
+                              border: Border.all(
+                                color: Colors.grey[400]!,
+                                width: 1.5,
+                              ),
                             ),
                             child: Icon(
                               Icons.close_rounded,

@@ -47,7 +47,9 @@ class _AddAddressPageState extends State<AddAddressPage> {
                 isDefaultAddress = value ?? false;
               });
             },
-            onAddPressed: () {},
+            onAddPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ],
       ),

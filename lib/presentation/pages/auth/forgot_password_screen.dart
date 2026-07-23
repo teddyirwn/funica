@@ -20,42 +20,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         child: Stack(
           children: [
             Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: SafeArea(
-                bottom: false,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        '9:41',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                          const SizedBox(width: 5),
-                          const Icon(Icons.wifi, size: 18, color: Colors.black),
-                          const SizedBox(width: 5),
-                          Transform.rotate(
-                            angle: math.pi / 2,
-                            child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
               top: 50,
               left: 12,
               right: 24,
@@ -66,7 +30,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       icon: const Icon(Icons.arrow_back, color: Colors.black),
                       onPressed: () {
                         Navigator.pop(context);
-                        
                       },
                     ),
                     const SizedBox(width: 4),
@@ -245,11 +208,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       height: 56,
                       child: ElevatedButton(
                         onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const OtpVerificationScreen()),
-                        );
-                      },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const OtpVerificationScreen(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF1F1D2B),
                           shape: RoundedRectangleBorder(

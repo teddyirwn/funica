@@ -4,10 +4,7 @@ import 'package:flutter/material.dart';
 class ViewReviewsScreen extends StatefulWidget {
   final String ratingText;
 
-  const ViewReviewsScreen({
-    super.key,
-    this.ratingText = '4.7 (7,376 reviews)',
-  });
+  const ViewReviewsScreen({super.key, this.ratingText = '4.7 (7,376 reviews)'});
 
   @override
   State<ViewReviewsScreen> createState() => _ViewReviewsScreenState();
@@ -80,34 +77,6 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
         child: Column(
           children: [
             // STATUS BAR MANUAL
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    '9:41',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      const Icon(Icons.wifi, size: 18, color: Colors.black),
-                      const SizedBox(width: 5),
-                      Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
 
             // HEADER (BACK BUTTON, TITLE, SEARCH ICON)
             Padding(
@@ -115,7 +84,10 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                   const SizedBox(width: 4),
@@ -130,7 +102,10 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.search_rounded, color: Color(0xFF1F1D2B)),
+                    icon: const Icon(
+                      Icons.search_rounded,
+                      color: Color(0xFF1F1D2B),
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -161,7 +136,9 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                       margin: const EdgeInsets.only(right: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
-                        color: isSelected ? const Color(0xFF1F1D2B) : Colors.white,
+                        color: isSelected
+                            ? const Color(0xFF1F1D2B)
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
                           color: const Color(0xFF1F1D2B),
@@ -172,7 +149,9 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                         child: Text(
                           label,
                           style: TextStyle(
-                            color: isSelected ? Colors.white : const Color(0xFF1F1D2B),
+                            color: isSelected
+                                ? Colors.white
+                                : const Color(0xFF1F1D2B),
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
                           ),
@@ -188,10 +167,14 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
             // LIST OF REVIEWS
             Expanded(
               child: ListView.separated(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 8,
+                ),
                 physics: const BouncingScrollPhysics(),
                 itemCount: _reviewsList.length,
-                separatorBuilder: (context, index) => const SizedBox(height: 24),
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 24),
                 itemBuilder: (context, index) {
                   final review = _reviewsList[index];
                   final isLiked = review['isLiked'] as bool;
@@ -226,7 +209,10 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                           ),
                           // BADGE RATING ITEM
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 6,
+                            ),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(16),
@@ -286,15 +272,21 @@ class _ViewReviewsScreenState extends State<ViewReviewsScreen> {
                               setState(() {
                                 review['isLiked'] = !isLiked;
                                 if (review['isLiked'] as bool) {
-                                  review['likes'] = (review['likes'] as int) + 1;
+                                  review['likes'] =
+                                      (review['likes'] as int) + 1;
                                 } else {
-                                  review['likes'] = (review['likes'] as int) - 1;
+                                  review['likes'] =
+                                      (review['likes'] as int) - 1;
                                 }
                               });
                             },
                             child: Icon(
-                              isLiked ? Icons.favorite_rounded : Icons.favorite_border_rounded,
-                              color: isLiked ? Colors.red : const Color(0xFF1F1D2B),
+                              isLiked
+                                  ? Icons.favorite_rounded
+                                  : Icons.favorite_border_rounded,
+                              color: isLiked
+                                  ? Colors.red
+                                  : const Color(0xFF1F1D2B),
                               size: 18,
                             ),
                           ),
