@@ -23,9 +23,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           width: 24,
           height: 24,
         ),
-        onPressed: () {
-          Navigator.pop(context);
-        },
+        onPressed: () {},
       ),
       title: Text(
         title,

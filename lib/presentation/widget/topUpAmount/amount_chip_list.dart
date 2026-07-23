@@ -25,7 +25,7 @@ class AmountChipList extends StatelessWidget {
         crossAxisCount: 3,
         crossAxisSpacing: 24,
         mainAxisSpacing: 24,
-        childAspectRatio: 3.5,
+        childAspectRatio: 2.8,
       ),
       itemCount: amounts.length,
       itemBuilder: (BuildContext context, int index) {

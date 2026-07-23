@@ -7,6 +7,7 @@ class AmountChipButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("Amount: $amount");
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.white,
@@ -16,7 +17,6 @@ class AmountChipButton extends StatelessWidget {
           side: BorderSide(color: AppColors.primaryColor),
           borderRadius: BorderRadius.circular(50),
         ),
-        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 32),
       ),
       onPressed: () {},
       child: Text(
