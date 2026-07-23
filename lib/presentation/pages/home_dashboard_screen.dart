@@ -5,7 +5,7 @@ import 'package:funica/presentation/pages/home_action_menu/most_populer_screen.d
 import 'package:funica/presentation/pages/home_action_menu/notification_screen.dart';
 import 'package:funica/presentation/pages/home_action_menu/special_offers_screen.dart';
 import 'package:funica/presentation/pages/home_action_menu/wishlist_screen.dart';
-import 'package:funica/presentation/pages/order_page.dart';
+import 'package:funica/presentation/pages/order/order_page.dart';
 import 'package:funica/presentation/pages/product_detail/chair_category_screen.dart';
 import 'package:funica/presentation/pages/product_detail/cupboard_category_screen.dart';
 import 'package:funica/presentation/pages/product_detail/kitchen_category_screen.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:funica/core/constants/app_color.dart';
-import 'package:funica/presentation/pages/order_tracking_page.dart';
+import 'package:funica/presentation/pages/order/order_tracking_page.dart';
 import 'package:funica/presentation/widget/orderListpage/OrderCardItem.dart';
 
 class TrackOrderButton extends StatelessWidget {
