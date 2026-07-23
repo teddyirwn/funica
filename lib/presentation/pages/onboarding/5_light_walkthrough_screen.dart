@@ -22,42 +22,6 @@ class WalkthroughScreenFour extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  Positioned(
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    child: SafeArea(
-                      bottom: false,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              '9:41',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black,
-                              ),
-                            ),
-                            Row(
-                              children: [
-                                const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                                const SizedBox(width: 5),
-                                const Icon(Icons.wifi, size: 18, color: Colors.black),
-                                const SizedBox(width: 5),
-                                Transform.rotate(
-                                  angle: math.pi / 2,
-                                  child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -128,7 +92,9 @@ class WalkthroughScreenFour extends StatelessWidget {
                           // 2. Navigasi push ke SplashScreen
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const LetsYouInScreen()),
+                            MaterialPageRoute(
+                              builder: (context) => const LetsYouInScreen(),
+                            ),
                           );
                         },
                         style: ElevatedButton.styleFrom(

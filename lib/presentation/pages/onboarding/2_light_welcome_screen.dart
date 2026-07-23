@@ -12,7 +12,9 @@ class WelcomeScreen extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const WalkthroughScreenTwo()),
+            MaterialPageRoute(
+              builder: (context) => const WalkthroughScreenTwo(),
+            ),
           );
         },
         child: SizedBox.expand(
@@ -23,44 +25,6 @@ class WelcomeScreen extends StatelessWidget {
                 child: Image.asset(
                   'assets/images/bg_welcome.png',
                   fit: BoxFit.cover,
-                ),
-              ),
-
-              // 2. Status Bar
-              Positioned(
-                top: 0,
-                left: 0,
-                right: 0,
-                child: SafeArea(
-                  bottom: false,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          '9:41',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.white),
-                            const SizedBox(width: 5),
-                            const Icon(Icons.wifi, size: 18, color: Colors.white),
-                            const SizedBox(width: 5),
-                            Transform.rotate(
-                              angle: math.pi / 2,
-                              child: const Icon(Icons.battery_full, size: 18, color: Colors.white),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
               ),
 

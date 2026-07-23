@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '4_light_walkthrough_screen.dart';
 
@@ -21,42 +20,6 @@ class WalkthroughScreenTwo extends StatelessWidget {
                     child: Image.asset(
                       'assets/images/bg_screen3.png',
                       fit: BoxFit.cover,
-                    ),
-                  ),
-                  Positioned(
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    child: SafeArea(
-                      bottom: false,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              '9:41',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black,
-                              ),
-                            ),
-                            Row(
-                              children: [
-                                const Icon(Icons.signal_cellular_alt, size: 18, color: Colors.black),
-                                const SizedBox(width: 5),
-                                const Icon(Icons.wifi, size: 18, color: Colors.black),
-                                const SizedBox(width: 5),
-                                Transform.rotate(
-                                  angle: math.pi / 2,
-                                  child: const Icon(Icons.battery_full, size: 18, color: Colors.black),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
                     ),
                   ),
                 ],
@@ -85,8 +48,9 @@ class WalkthroughScreenTwo extends StatelessWidget {
                             height: 1.2,
                           ),
                         ),
-                        const SizedBox(height: 24), // Jarak antara teks dan indikator
-
+                        const SizedBox(
+                          height: 24,
+                        ), // Jarak antara teks dan indikator
                         // Indikator Dots tepat di bawah teks (Aktif di Kiri)
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -129,7 +93,10 @@ class WalkthroughScreenTwo extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const WalkthroughScreenThree()),
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const WalkthroughScreenThree(),
+                            ),
                           );
                         },
                         style: ElevatedButton.styleFrom(

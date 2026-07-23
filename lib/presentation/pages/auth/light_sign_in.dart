@@ -77,8 +77,14 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 decoration: InputDecoration(
                   hintText: 'Email',
-                  hintStyle: const TextStyle(color: Color(0xFF9E9E9E), fontSize: 14),
-                  prefixIcon: const Icon(Icons.email_outlined, color: Color(0xFF1F1D2B)),
+                  hintStyle: const TextStyle(
+                    color: Color(0xFF9E9E9E),
+                    fontSize: 14,
+                  ),
+                  prefixIcon: const Icon(
+                    Icons.email_outlined,
+                    color: Color(0xFF1F1D2B),
+                  ),
                   filled: true,
                   fillColor: const Color(0xFFFAFAFA),
                   contentPadding: const EdgeInsets.symmetric(vertical: 16),
@@ -92,7 +98,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(color: Color(0xFF1F1D2B), width: 1.5),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF1F1D2B),
+                      width: 1.5,
+                    ),
                   ),
                 ),
               ),
@@ -109,11 +118,19 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 decoration: InputDecoration(
                   hintText: 'Password',
-                  hintStyle: const TextStyle(color: Color(0xFF9E9E9E), fontSize: 14),
-                  prefixIcon: const Icon(Icons.lock_outline, color: Color(0xFF1F1D2B)),
+                  hintStyle: const TextStyle(
+                    color: Color(0xFF9E9E9E),
+                    fontSize: 14,
+                  ),
+                  prefixIcon: const Icon(
+                    Icons.lock_outline,
+                    color: Color(0xFF1F1D2B),
+                  ),
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _obscurePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+                      _obscurePassword
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
                       color: const Color(0xFF1F1D2B),
                     ),
                     onPressed: () {
@@ -135,7 +152,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(color: Color(0xFF1F1D2B), width: 1.5),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF1F1D2B),
+                      width: 1.5,
+                    ),
                   ),
                 ),
               ),
@@ -182,7 +202,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const FillProfileScreen()),
+                      MaterialPageRoute(
+                        builder: (context) => const FillProfileScreen(),
+                      ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -210,7 +232,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const ForgotPasswordScreen()),
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotPasswordScreen(),
+                      ),
                     );
                   },
                   child: const Text(
@@ -228,15 +252,23 @@ class _SignInScreenState extends State<SignInScreen> {
               // 9. Garis Pembatas "or continue with"
               Row(
                 children: const [
-                  Expanded(child: Divider(color: Color(0xFFE0E0E0), thickness: 1)),
+                  Expanded(
+                    child: Divider(color: Color(0xFFE0E0E0), thickness: 1),
+                  ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Text(
                       'or continue with',
-                      style: TextStyle(color: Color(0xFF9E9E9E), fontSize: 13, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        color: Color(0xFF9E9E9E),
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
-                  Expanded(child: Divider(color: Color(0xFFE0E0E0), thickness: 1)),
+                  Expanded(
+                    child: Divider(color: Color(0xFFE0E0E0), thickness: 1),
+                  ),
                 ],
               ),
               const SizedBox(height: 24),
@@ -246,17 +278,29 @@ class _SignInScreenState extends State<SignInScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _buildSocialIconButton(
-                    icon: const Icon(Icons.facebook, color: Color(0xFF1877F2), size: 24),
+                    icon: const Icon(
+                      Icons.facebook,
+                      color: Color(0xFF1877F2),
+                      size: 24,
+                    ),
                     onPressed: () {},
                   ),
                   const SizedBox(width: 20),
                   _buildSocialIconButton(
-                    icon: Image.asset('assets/google_logo.png', height: 22, width: 22),
+                    icon: Image.asset(
+                      'assets/icons/Google.png',
+                      height: 22,
+                      width: 22,
+                    ),
                     onPressed: () {},
                   ),
                   const SizedBox(width: 20),
                   _buildSocialIconButton(
-                    icon: const Icon(Icons.apple, color: Colors.black, size: 24),
+                    icon: const Icon(
+                      Icons.apple,
+                      color: Colors.black,
+                      size: 24,
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -292,7 +336,10 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
-  Widget _buildSocialIconButton({required Widget icon, required VoidCallback onPressed}) {
+  Widget _buildSocialIconButton({
+    required Widget icon,
+    required VoidCallback onPressed,
+  }) {
     return InkWell(
       onTap: onPressed,
       borderRadius: BorderRadius.circular(16),
